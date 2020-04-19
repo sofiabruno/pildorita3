@@ -15,7 +15,7 @@ namespace Dominio
         public bool ValidarContra(string pass)
         {
             bool salida = false;
-            if (pass.Length > 5)
+            if (pass.Length > 99)
             {
                 salida= true;
             }
