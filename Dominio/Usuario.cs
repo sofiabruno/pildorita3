@@ -15,6 +15,9 @@ namespace Dominio
         public bool ValidarContra(string pass)
         {
             bool salida = false;
+
+            string Sofi = "";
+
             return salida;
         }
 
