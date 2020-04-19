@@ -15,9 +15,11 @@ namespace Dominio
         public bool ValidarContra(string pass)
         {
             bool salida = false;
-
-            string Sofi = "";
-
+            if (pass.Length > 5)
+            {
+                salida= true;
+            }
+            
             return salida;
         }
 
