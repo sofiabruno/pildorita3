@@ -12,4 +12,9 @@ namespace Dominio
         public string Password { get; set; }
         public string Rol { get; set; }
     }
+
+    public bool ValidarPass(string pass)
+    {
+        return false;
+    }
 }
