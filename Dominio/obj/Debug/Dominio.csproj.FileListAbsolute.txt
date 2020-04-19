@@ -1,0 +1,6 @@
+C:\Users\Fede\source\repos\OBLI1_P3\Dominio\bin\Debug\Dominio.dll
+C:\Users\Fede\source\repos\OBLI1_P3\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Fede\source\repos\OBLI1_P3\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Users\Fede\source\repos\OBLI1_P3\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Fede\source\repos\OBLI1_P3\Dominio\obj\Debug\Dominio.dll
+C:\Users\Fede\source\repos\OBLI1_P3\Dominio\obj\Debug\Dominio.pdb

@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.779
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortLog", "PortLog\PortLog.csproj", "{133D114C-5A2E-4E59-8626-8563CAA8B116}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{E0FFA304-B876-454A-83A3-69606098084F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositorios", "Repositorios\Repositorios.csproj", "{82F00326-BF75-4ADA-89C1-10940451BA6B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{133D114C-5A2E-4E59-8626-8563CAA8B116}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{133D114C-5A2E-4E59-8626-8563CAA8B116}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{133D114C-5A2E-4E59-8626-8563CAA8B116}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{133D114C-5A2E-4E59-8626-8563CAA8B116}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0FFA304-B876-454A-83A3-69606098084F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0FFA304-B876-454A-83A3-69606098084F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0FFA304-B876-454A-83A3-69606098084F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0FFA304-B876-454A-83A3-69606098084F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82F00326-BF75-4ADA-89C1-10940451BA6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82F00326-BF75-4ADA-89C1-10940451BA6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82F00326-BF75-4ADA-89C1-10940451BA6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82F00326-BF75-4ADA-89C1-10940451BA6B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B3CFFD93-12DA-49CA-A8CB-057A12F8DB41}
+	EndGlobalSection
+EndGlobal
