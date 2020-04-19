@@ -11,10 +11,14 @@ namespace Dominio
         public int Ci { get; set; }
         public string Password { get; set; }
         public string Rol { get; set; }
+
+        public bool ValidarContra(string pass)
+        {
+            bool salida = false;
+            return salida;
+        }
+
     }
 
-    public bool ValidarPass(string pass)
-    {
-        return false;
-    }
+  
 }
