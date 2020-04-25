@@ -10,7 +10,7 @@ namespace Repositorios
 {
     public static class FachadaPortLog
     {
-        #region FachadaUsuario
+        #region FachadaUsuario ----------------------------------------------------------------------------------- FachadaUsuario
         public static bool AltaUsuario(int ci, string password, string rol)
         {
             bool ret = false;
@@ -60,16 +60,6 @@ namespace Repositorios
             return ret;
         }
 
-        //public static List<Usuario> TraerTodosLosUsuarios()
-        //{
-        //    List<Usuario> usuarios = new List<Usuario>();
-
-        //    RepoUsuarios repoUsr = new RepoUsuarios();
-        //    usuarios = repoUsr.TraerTodos();
-
-        //    return usuarios;
-        //}
-
         public static List<Usuario> TraerTodosLosUsuarios()
         {
             RepoUsuarios repoUsr = new RepoUsuarios();
@@ -84,8 +74,8 @@ namespace Repositorios
         }
         #endregion
 
-        #region FachadaCliente
-        public static bool AltaCliente(string nombre, int rut, DateTime antiguedad)
+        #region FachadaCliente ----------------------------------------------------------------------------------- FachadaCliente
+        public static bool AltaCliente(string nombre, long rut, DateTime antiguedad)
         {
             bool ret = false;
 
@@ -102,17 +92,17 @@ namespace Repositorios
             return ret;
         }
 
-        public static bool BajaCliente(int rut)
+        public static bool BajaCliente(int id)
         {
             bool ret = false;
 
             RepoClientes repoCli = new RepoClientes();
-            ret = repoCli.Baja(rut);
+            ret = repoCli.Baja(id);
 
             return ret;
         }
 
-        public static bool ModificacionCliente(string nombre, int rut, DateTime antiguedad)
+        public static bool ModificacionCliente(int id, string nombre, long rut, DateTime antiguedad)
         {
             bool ret = false;
 
@@ -122,7 +112,7 @@ namespace Repositorios
 
             foreach (Cliente c in clientes)
             {
-                if (c.Rut == rut)
+                if (c.Id == id)
                 {
                     c.Nombre = nombre;
                     cliMod = c;
@@ -141,10 +131,10 @@ namespace Repositorios
             return repoCli.TraerTodos();
         }
 
-        public static Cliente BuscarClientePorId(int rut)
+        public static Cliente BuscarClientePorId(int id)
         {
             RepoClientes repoCli = new RepoClientes();
-            return repoCli.BuscarPorId(rut);
+            return repoCli.BuscarPorId(id);
         }
         #endregion
 

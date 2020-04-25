@@ -52,10 +52,10 @@ namespace Repositorios
             string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(strCon);
 
-            string sql = "delete from Clientes where Rut=@rut;";
+            string sql = "delete from Clientes where ClienteID=@id;";
             SqlCommand cmd = new SqlCommand(sql, con);
 
-            cmd.Parameters.AddWithValue("@rut", id);
+            cmd.Parameters.AddWithValue("@id", id);
 
             try
             {
@@ -84,11 +84,11 @@ namespace Repositorios
             string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(strCon);
 
-            string sql = "update Clientes set Nombre=@nom where Rut=@rut;";
+            string sql = "update Clientes set Nombre=@nom where ClienteID=@id;";
             SqlCommand cmd = new SqlCommand(sql, con);
 
             cmd.Parameters.AddWithValue("@nom", obj.Nombre);
-            cmd.Parameters.AddWithValue("@rut", obj.Rut);
+            cmd.Parameters.AddWithValue("@id", obj.Id);
 
             try
             {
@@ -129,9 +129,10 @@ namespace Repositorios
                 {
                     Cliente cli = new Cliente
                     {
-                        Nombre = reader.GetString(0),
-                        Rut = reader.GetInt32(1),
-                        Antiguedad = reader.GetDateTime(2)
+                        Id = reader.GetInt32(0),
+                        Rut = reader.GetInt64(1),
+                        Nombre = reader.GetString(2),
+                        Antiguedad = reader.GetDateTime(3)
                     };
 
                     clientes.Add(cli);
@@ -158,10 +159,10 @@ namespace Repositorios
             string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(strCon);
 
-            string sql = "select * from Clientes where Rut=@rut";
+            string sql = "select * from Clientes where ClienteID=@id";
             SqlCommand cmd = new SqlCommand(sql, con);
 
-            cmd.Parameters.AddWithValue("@rut", id);
+            cmd.Parameters.AddWithValue("@id", id);
 
             try
             {
@@ -171,10 +172,10 @@ namespace Repositorios
                 if (reader.Read())
                 {
                     cli = new Cliente
-                    {                  
-                        Nombre = reader.GetString(0),
-                        Rut = reader.GetInt32(1),
-                        Antiguedad = reader.GetDateTime(2)
+                    {
+                        Rut = reader.GetInt64(1),
+                        Nombre = reader.GetString(2),
+                        Antiguedad = reader.GetDateTime(3)
                     };
                 }
 

@@ -45,7 +45,7 @@ namespace Repositorios
             return ret;
         }
 
-        public bool Baja(int id)
+        public bool Baja(int ci)
         {
             bool ret = false;
 
@@ -55,7 +55,7 @@ namespace Repositorios
             string sql = "delete from Usuarios where Ci=@ci;";
             SqlCommand cmd = new SqlCommand(sql, con);
 
-            cmd.Parameters.AddWithValue("@ci", id);
+            cmd.Parameters.AddWithValue("@ci", ci);
 
             try
             {
@@ -151,7 +151,7 @@ namespace Repositorios
             return usuarios;
         }
 
-        public Usuario BuscarPorId(int id)
+        public Usuario BuscarPorId(int ci)
         {
             Usuario usr = null;
 
@@ -161,7 +161,7 @@ namespace Repositorios
             string sql = "select * from Usuarios where Ci=@ci";
             SqlCommand cmd = new SqlCommand(sql, con);
 
-            cmd.Parameters.AddWithValue("@ci", id);
+            cmd.Parameters.AddWithValue("@ci", ci);
 
             try
             {
