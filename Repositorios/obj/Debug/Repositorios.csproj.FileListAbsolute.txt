@@ -1,0 +1,2 @@
+C:\Users\Fede\Source\Repos\pildorita3\Repositorios\obj\Debug\Repositorios.csprojAssemblyReference.cache
+C:\Users\Fede\Source\Repos\pildorita3\Repositorios\obj\Debug\Repositorios.csproj.CoreCompileInputs.cache
