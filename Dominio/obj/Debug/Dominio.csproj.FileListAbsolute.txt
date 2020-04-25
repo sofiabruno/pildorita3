@@ -1,4 +1,3 @@
-C:\Users\Fede\Source\Repos\pildorita3\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
 C:\Users\Fede\Source\Repos\pildorita3\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\Fede\Source\Repos\pildorita3\Dominio\bin\Debug\Dominio.dll
 C:\Users\Fede\Source\Repos\pildorita3\Dominio\bin\Debug\Dominio.pdb

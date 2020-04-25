@@ -62,9 +62,17 @@ namespace WebMVC.Controllers
         }
 
         // GET: Usuario/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int ci)
         {
-            return View();
+            if (Session["rol"] == null)
+                return Redirect("/Home/Index");
+
+            if (Session["rol"].ToString() != "admin")
+                return Redirect("/Home/Index");
+
+            Usuario usuario = FachadaPortLog.BuscarUsuarioPorId(ci);
+
+            return View(usuario);
         }
 
         // GET: Usuario/Create
@@ -104,20 +112,28 @@ namespace WebMVC.Controllers
         }
 
         // GET: Usuario/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int ci)
         {
-            return View();
+            if (Session["rol"] == null)
+                return Redirect("/Home/Index");
+
+            if (Session["rol"].ToString() != "admin")
+                return Redirect("/Home/Index");
+
+            Usuario usuario = FachadaPortLog.BuscarUsuarioPorId(ci);
+
+            return View(usuario);
         }
 
         // POST: Usuario/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int ci, Usuario usuario)
         {
             try
             {
-                // TODO: Add update logic here
+                FachadaPortLog.ModificacionUsuario(usuario.Ci, usuario.Password, usuario.Rol);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("List");
             }
             catch
             {
@@ -126,25 +142,50 @@ namespace WebMVC.Controllers
         }
 
         // GET: Usuario/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int ci)
         {
-            return View();
+            if (Session["rol"] == null)
+                return Redirect("/Home/Index");
+
+            if (Session["rol"].ToString() != "admin")
+                return Redirect("/Home/Index");
+
+            Usuario usuario = FachadaPortLog.BuscarUsuarioPorId(ci);
+
+            return View(usuario);
         }
 
         // POST: Usuario/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int ci, Usuario usuario)
         {
             try
             {
-                // TODO: Add delete logic here
+                FachadaPortLog.BajaUsuario(ci);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("List");
             }
             catch
             {
                 return View();
             }
         }
+
+        // GET: Usuario/List
+        [HttpGet]
+        public ActionResult List()
+        {
+            if (Session["rol"] == null)
+                return Redirect("/Home/Index");
+
+            if (Session["rol"].ToString() != "admin")
+                return Redirect("/Home/Index");
+
+            return View(FachadaPortLog.TraerTodosLosUsuarios());
+        }
+
+
+
+
     }
 }

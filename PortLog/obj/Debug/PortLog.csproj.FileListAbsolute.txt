@@ -1,2 +1,12 @@
 C:\Users\Fede\Source\Repos\pildorita3\PortLog\obj\Debug\PortLog.csprojAssemblyReference.cache
 C:\Users\Fede\Source\Repos\pildorita3\PortLog\obj\Debug\PortLog.csproj.CoreCompileInputs.cache
+C:\Users\Fede\Source\Repos\pildorita3\PortLog\bin\Debug\PortLog.exe.config
+C:\Users\Fede\Source\Repos\pildorita3\PortLog\bin\Debug\PortLog.exe
+C:\Users\Fede\Source\Repos\pildorita3\PortLog\bin\Debug\PortLog.pdb
+C:\Users\Fede\Source\Repos\pildorita3\PortLog\bin\Debug\Dominio.dll
+C:\Users\Fede\Source\Repos\pildorita3\PortLog\bin\Debug\Repositorios.dll
+C:\Users\Fede\Source\Repos\pildorita3\PortLog\bin\Debug\Dominio.pdb
+C:\Users\Fede\Source\Repos\pildorita3\PortLog\bin\Debug\Repositorios.pdb
+C:\Users\Fede\Source\Repos\pildorita3\PortLog\obj\Debug\PortLog.csproj.CopyComplete
+C:\Users\Fede\Source\Repos\pildorita3\PortLog\obj\Debug\PortLog.exe
+C:\Users\Fede\Source\Repos\pildorita3\PortLog\obj\Debug\PortLog.pdb
