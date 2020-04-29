@@ -93,7 +93,7 @@ namespace WebMVC.Controllers
         {
             try
             {
-                bool ret = FachadaPortLog.AltaUsuario(usuario.Ci, usuario.Password, usuario.Rol);
+                bool ret = FachadaPortLog.AltaUsuario(usuario.Ci, usuario.Password, usuario.Rol.ToString());
 
                 if (ret)
                 {
