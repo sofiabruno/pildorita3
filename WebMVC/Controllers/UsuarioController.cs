@@ -97,11 +97,14 @@ namespace WebMVC.Controllers
 
                 if (ret)
                 {
-                    ViewBag.Mensaje = "El usuario se ha ingresado con exito";
-                    // Como mostrar este mensaje al usuario unos segundos?
+                    return Redirect("/Home/Index");
                 }
+                else
+                {
+                    ViewBag.Mensaje = "Ha ocurrido un error al ingresar el usuario";
 
-                return Redirect("/Home/Index");
+                    return View(usuario);
+                }
             }
             catch
             {

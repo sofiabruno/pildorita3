@@ -10,20 +10,23 @@ namespace Repositorios
 {
     public static class FachadaPortLog
     {
-        #region FachadaUsuario ----------------------------------------------------------------------------------- FachadaUsuario
+        #region Usuario ----------------------------------------------------------------------------------- 
         public static bool AltaUsuario(int ci, string password, string rol)
         {
             bool ret = false;
 
-            Usuario usr = new Usuario()
+            if (Validaciones.ValidarCiUsuario(ci) && Validaciones.ValidarPassword(password))
             {
-                Ci = ci,
-                Password = password,
-                Rol = rol
-            };
+                Usuario usr = new Usuario()
+                {
+                    Ci = ci,
+                    Password = password,
+                    Rol = rol
+                };
 
-            RepoUsuarios repoUsr = new RepoUsuarios();
-            ret = repoUsr.Alta(usr);
+                RepoUsuarios repoUsr = new RepoUsuarios();
+                ret = repoUsr.Alta(usr);
+            }
 
             return ret;
         }
@@ -74,7 +77,7 @@ namespace Repositorios
         }
         #endregion
 
-        #region FachadaCliente ----------------------------------------------------------------------------------- FachadaCliente
+        #region Cliente ----------------------------------------------------------------------------------- 
         public static bool AltaCliente(string nombre, long rut, DateTime antiguedad)
         {
             bool ret = false;
@@ -138,13 +141,13 @@ namespace Repositorios
         }
         #endregion
 
-        #region FachadaProducto
+        #region Producto ----------------------------------------------------------------------------------
 
 
 
         #endregion
 
-        #region Fachada Importacion
+        #region Importacion -------------------------------------------------------------------------------
 
 
 

@@ -20,7 +20,15 @@ namespace WebMVC.Controllers
         // GET: Cliente/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            if (Session["rol"] == null)
+                return Redirect("/Home/Index");
+
+            if (Session["rol"].ToString() != "deposito")
+                return Redirect("/Home/Index");
+
+            Cliente cliente = FachadaPortLog.BuscarClientePorId(id);
+
+            return View(cliente);
         }
 
         // GET: Cliente/Create
@@ -62,18 +70,26 @@ namespace WebMVC.Controllers
         // GET: Cliente/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            if (Session["rol"] == null)
+                return Redirect("/Home/Index");
+
+            if (Session["rol"].ToString() != "deposito")
+                return Redirect("/Home/Index");
+
+            Cliente cliente = FachadaPortLog.BuscarClientePorId(id);
+
+            return View(cliente);
         }
 
         // POST: Cliente/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Cliente cliente)
         {
             try
             {
-                // TODO: Add update logic here
+                FachadaPortLog.ModificacionCliente(cliente.Id, cliente.Nombre, cliente.Rut, cliente.Antiguedad);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("List");
             }
             catch
             {
@@ -84,18 +100,26 @@ namespace WebMVC.Controllers
         // GET: Cliente/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            if (Session["rol"] == null)
+                return Redirect("/Home/Index");
+
+            if (Session["rol"].ToString() != "deposito")
+                return Redirect("/Home/Index");
+
+            Cliente cliente = FachadaPortLog.BuscarClientePorId(id);
+
+            return View(cliente);
         }
 
         // POST: Cliente/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Cliente cliente)
         {
             try
             {
-                // TODO: Add delete logic here
+                FachadaPortLog.BajaCliente(id);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("List");
             }
             catch
             {
