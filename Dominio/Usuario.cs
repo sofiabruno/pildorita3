@@ -11,21 +11,6 @@ namespace Dominio
         public int Ci { get; set; }
         public string Password { get; set; }
         public string Rol { get; set; }
-
-        //public bool ValidarContra(string pass)
-        //{
-        //    bool salida = false;
-        //    if (pass.Length > 99)
-        //    {
-        //        salida= true;
-        //    }
-            
-        //    return salida;
-        //}
-
-
-
-
     }
 
   
