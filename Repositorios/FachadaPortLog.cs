@@ -15,18 +15,23 @@ namespace Repositorios
         {
             bool ret = false;
 
-            if (Validaciones.ValidarCiUsuario(ci) && Validaciones.ValidarPassword(password))
-            {
-                Usuario usr = new Usuario()
-                {
-                    Ci = ci,
-                    Password = password,
-                    Rol = rol
-                };
+            Usuario existe = BuscarUsuarioPorId(ci);
 
-                RepoUsuarios repoUsr = new RepoUsuarios();
-                ret = repoUsr.Alta(usr);
-            }
+            if (existe == null) 
+            {
+                if (Validaciones.ValidarCiUsuario(ci) && Validaciones.ValidarPassword(password))
+                {
+                    Usuario usr = new Usuario()
+                    {
+                        Ci = ci,
+                        Password = password,
+                        Rol = rol
+                    };
+
+                    RepoUsuarios repoUsr = new RepoUsuarios();
+                    ret = repoUsr.Alta(usr);
+                }
+            }           
 
             return ret;
         }
