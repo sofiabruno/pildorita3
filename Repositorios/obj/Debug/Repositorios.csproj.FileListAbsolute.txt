@@ -7,3 +7,12 @@ C:\Users\Fede\Source\Repos\pildorita3\Repositorios\bin\Debug\Dominio.pdb
 C:\Users\Fede\Source\Repos\pildorita3\Repositorios\obj\Debug\Repositorios.csproj.CopyComplete
 C:\Users\Fede\Source\Repos\pildorita3\Repositorios\obj\Debug\Repositorios.dll
 C:\Users\Fede\Source\Repos\pildorita3\Repositorios\obj\Debug\Repositorios.pdb
+C:\Users\Sofia\Documents\GitHub\pildorita3\Repositorios\bin\Debug\Repositorios.dll
+C:\Users\Sofia\Documents\GitHub\pildorita3\Repositorios\bin\Debug\Repositorios.pdb
+C:\Users\Sofia\Documents\GitHub\pildorita3\Repositorios\bin\Debug\Dominio.dll
+C:\Users\Sofia\Documents\GitHub\pildorita3\Repositorios\bin\Debug\Dominio.pdb
+C:\Users\Sofia\Documents\GitHub\pildorita3\Repositorios\obj\Debug\Repositorios.csprojAssemblyReference.cache
+C:\Users\Sofia\Documents\GitHub\pildorita3\Repositorios\obj\Debug\Repositorios.csproj.CoreCompileInputs.cache
+C:\Users\Sofia\Documents\GitHub\pildorita3\Repositorios\obj\Debug\Repositorios.csproj.CopyComplete
+C:\Users\Sofia\Documents\GitHub\pildorita3\Repositorios\obj\Debug\Repositorios.dll
+C:\Users\Sofia\Documents\GitHub\pildorita3\Repositorios\obj\Debug\Repositorios.pdb

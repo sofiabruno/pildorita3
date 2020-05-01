@@ -15,7 +15,7 @@ namespace Dominio
         [DataType(DataType.Date)]
         public DateTime FechaIngreso { get; set; }
         [Required]
-        [Display(Name = "Fecha Ingreso")]
+        [Display(Name = "Fecha de Salida Prevista")]
         [DataType(DataType.Date)]
         public DateTime SalidaPrevista { get; set; }
         [Required]

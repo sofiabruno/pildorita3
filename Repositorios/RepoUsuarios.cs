@@ -15,7 +15,7 @@ namespace Repositorios
         {
             bool ret = false;
 
-            string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+            string strCon = "Data Source=(local)\\SQLEXPRESS; Initial Catalog=BasePortLog; Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(strCon);
 
             string sql = "insert into Usuarios(Ci, Password, Rol) values(@ci, @pwd, @rol);";

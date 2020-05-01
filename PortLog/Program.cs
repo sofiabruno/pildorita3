@@ -13,7 +13,8 @@ namespace PortLog
         static void Main(string[] args)
         {
             #region Usuario
-            //Console.WriteLine(FachadaPortLog.AltaUsuario(11112222, "depo02", "deposito"));
+
+            //Console.WriteLine(FachadaPortLog.AltaUsuario(11112222, "Depo02", "deposito"));
 
             //Console.WriteLine(FachadaPortLog.BajaUsuario(11112222));
 
@@ -44,8 +45,8 @@ namespace PortLog
             #endregion
 
             #region Cliente
-            //DateTime fecha = new DateTime(2020, 04, 19);
-            //Console.WriteLine(FachadaPortLog.AltaCliente("PruebaNoche", 111, fecha));
+            DateTime fecha = new DateTime(2020, 04, 19);
+            Console.WriteLine(FachadaPortLog.AltaCliente("PruebaNoche", 111, fecha));
 
             //Console.WriteLine(FachadaPortLog.BajaCliente(111));
 
