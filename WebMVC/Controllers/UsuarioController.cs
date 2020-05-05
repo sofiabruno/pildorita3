@@ -97,7 +97,7 @@ namespace WebMVC.Controllers
 
                 if (ret)
                 {
-                    return Redirect("/Home/Index");
+                    return Redirect("/Usuario/List");
                 }
                 else
                 {
@@ -108,9 +108,7 @@ namespace WebMVC.Controllers
             }
             catch
             {
-                ViewBag.Mensaje = "Ha ocurrido un error al ingresar el usuario";
-
-                return View(usuario);
+                return View();
             }
         }
 
