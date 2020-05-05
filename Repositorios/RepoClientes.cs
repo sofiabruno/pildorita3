@@ -11,11 +11,14 @@ namespace Repositorios
 {
     public class RepoClientes : IRepositorio<Cliente>
     {
+        string strCon = "Data Source=(local)\\SQLEXPRESS; Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+
+
         public bool Alta(Cliente obj)
         {
             bool ret = false;
 
-            string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+            //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(strCon);
 
             string sql = "insert into Clientes(Nombre, Rut, Antiguedad) values(@nom, @rut, @ant);";
@@ -49,7 +52,7 @@ namespace Repositorios
         {
             bool ret = false;
 
-            string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+            //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(strCon);
 
             string sql = "delete from Clientes where ClienteID=@id;";
@@ -81,7 +84,7 @@ namespace Repositorios
         {
             bool ret = false;
 
-            string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+            //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(strCon);
 
             string sql = "update Clientes set Nombre=@nom where ClienteID=@id;";
@@ -114,7 +117,7 @@ namespace Repositorios
         {
             List<Cliente> clientes = new List<Cliente>();
 
-            string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+            //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(strCon);
 
             string sql = "select * from Clientes";
@@ -156,7 +159,7 @@ namespace Repositorios
         {
             Cliente cli = null;
 
-            string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+            //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(strCon);
 
             string sql = "select * from Clientes where ClienteID=@id";

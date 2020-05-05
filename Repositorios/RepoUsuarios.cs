@@ -11,11 +11,18 @@ namespace Repositorios
 {
     public class RepoUsuarios : IRepositorio<Usuario>
     {
+      //voy a probar un generico xa cada 1
+
+        string strCon = "Data Source=(local)\\SQLEXPRESS; Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+        //string strConFede = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+
+
+
         public bool Alta(Usuario obj)
         {
             bool ret = false;
 
-            string strCon = "Data Source=(local)\\SQLEXPRESS; Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+            //string strCon = "Data Source=(local)\\SQLEXPRESS; Initial Catalog=BasePortLog; Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(strCon);
 
             string sql = "insert into Usuarios(Ci, Password, Rol) values(@ci, @pwd, @rol);";
@@ -49,7 +56,7 @@ namespace Repositorios
         {
             bool ret = false;
 
-            string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+            //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(strCon);
 
             string sql = "delete from Usuarios where Ci=@ci;";
@@ -81,7 +88,7 @@ namespace Repositorios
         {
             bool ret = false;
 
-            string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+            //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(strCon);
 
             string sql = "update Usuarios set Password=@pwd where Ci=@ci;";
@@ -114,7 +121,7 @@ namespace Repositorios
         {
             List<Usuario> usuarios = new List<Usuario>();
 
-            string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+            //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(strCon);
 
             string sql = "select * from Usuarios;";
@@ -155,7 +162,7 @@ namespace Repositorios
         {
             Usuario usr = null;
 
-            string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+            //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(strCon);
 
             string sql = "select * from Usuarios where Ci=@ci";

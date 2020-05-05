@@ -148,6 +148,12 @@ namespace Repositorios
 
         #region Producto ----------------------------------------------------------------------------------
 
+        public static List<Producto> TraerTodosLosProductos()
+        {
+            RepoProductos repoProds = new RepoProductos();
+
+            return repoProds.TraerTodos();
+        }
 
 
         #endregion

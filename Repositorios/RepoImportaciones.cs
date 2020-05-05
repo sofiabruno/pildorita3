@@ -11,11 +11,14 @@ namespace Repositorios
 {
     public class RepoImportaciones : IRepositorio<Importacion>
     {
+        string strCon = "Data Source=(local)\\SQLEXPRESS; Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+
+
         public bool Alta(Importacion obj)
         {
             bool ret = false;
 
-            string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+            //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(strCon);
 
             string sql = "insert into Importaciones(FechaIngreso, SalidaPrevista, ProductoID, Cantidad, PrecioUnitario) values(@fchIng, @salPrev, @ProdId, @cant, @precio);";
@@ -53,7 +56,7 @@ namespace Repositorios
         {
             bool ret = false;
 
-            string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+            //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(strCon);
 
             string sql = "delete from Clientes where ClienteID=@id;";

@@ -11,11 +11,14 @@ namespace Repositorios
 {
     public class RepoProductos : IRepositorio<Producto>
     {
+        string strCon = "Data Source=(local)\\SQLEXPRESS; Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+
+
         public bool Alta(Producto obj)
         {
             bool ret = false;
 
-            string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+            //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(strCon);
 
             string sql = "insert into Productos(Codigo, Nombre, Peso, Rut) values (@cod, @nom, @pes, @rut)";
@@ -65,7 +68,44 @@ namespace Repositorios
 
         public List<Producto> TraerTodos()
         {
-            throw new NotImplementedException();
+            List<Producto> productos = new List<Producto>();
+
+            //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+            SqlConnection con = new SqlConnection(strCon);
+
+            string sql = "select * from Productos;";
+            SqlCommand cmd = new SqlCommand(sql, con);
+
+            try
+            {
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Producto usr = new Producto
+                    {
+                        Codigo = reader.GetString(0),
+                        Nombre = reader.GetString(1),
+                        Peso = reader.GetDecimal(2),
+                       
+                    };
+
+                    productos.Add(usr);
+                }
+
+                con.Close();
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open) con.Close();
+            }
+
+            return productos;
         }
     }
 }
