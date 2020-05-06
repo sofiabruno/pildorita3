@@ -1,0 +1,12 @@
+C:\Users\Sofia\Documents\GitHub\pildorita3\WcfServicioProductos\bin\WcfServicioProductos.dll.config
+C:\Users\Sofia\Documents\GitHub\pildorita3\WcfServicioProductos\bin\WcfServicioProductos.dll
+C:\Users\Sofia\Documents\GitHub\pildorita3\WcfServicioProductos\bin\WcfServicioProductos.pdb
+C:\Users\Sofia\Documents\GitHub\pildorita3\WcfServicioProductos\bin\Dominio.dll
+C:\Users\Sofia\Documents\GitHub\pildorita3\WcfServicioProductos\bin\Repositorios.dll
+C:\Users\Sofia\Documents\GitHub\pildorita3\WcfServicioProductos\bin\Dominio.pdb
+C:\Users\Sofia\Documents\GitHub\pildorita3\WcfServicioProductos\bin\Repositorios.pdb
+C:\Users\Sofia\Documents\GitHub\pildorita3\WcfServicioProductos\obj\Debug\WcfServicioProductos.csprojAssemblyReference.cache
+C:\Users\Sofia\Documents\GitHub\pildorita3\WcfServicioProductos\obj\Debug\WcfServicioProductos.csproj.CoreCompileInputs.cache
+C:\Users\Sofia\Documents\GitHub\pildorita3\WcfServicioProductos\obj\Debug\WcfServicioProductos.csproj.CopyComplete
+C:\Users\Sofia\Documents\GitHub\pildorita3\WcfServicioProductos\obj\Debug\WcfServicioProductos.dll
+C:\Users\Sofia\Documents\GitHub\pildorita3\WcfServicioProductos\obj\Debug\WcfServicioProductos.pdb

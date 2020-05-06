@@ -85,9 +85,9 @@ namespace Repositorios
                 {
                     Producto usr = new Producto
                     {
-                        Codigo = reader.GetString(0),
-                        Nombre = reader.GetString(1),
-                        Peso = reader.GetDecimal(2),
+                        Codigo = reader.GetString(1),
+                        Nombre = reader.GetString(2),
+                        //Peso = reader.GetDecimal(2),
                        
                     };
 
