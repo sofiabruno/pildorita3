@@ -117,7 +117,7 @@ namespace WebMVC.Controllers
             ServicioProductosClient proxy = new ServicioProductosClient();
 
             
-            //List<Producto> lista = proxy.TraerTodo();
+            //List<DTOproducto> lista = proxy.TraerTodo();
 
             proxy.Close(); 
             //en la clase dijo q era importante cerrarlo
