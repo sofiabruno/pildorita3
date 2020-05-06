@@ -7,7 +7,7 @@ using System.Web.Mvc;
 using Dominio;
 using Repositorios;
 using WebMVC.ViewModels;
-//using WebMVC.ServiciosWCF;
+using WebMVC.WFCProducto;
 
 namespace WebMVC.Controllers
 {
@@ -19,23 +19,23 @@ namespace WebMVC.Controllers
             return View();
         }
 
-        // GET: Producto/Details/5
+        //GET: Producto/Details/5
         //public ActionResult Details(int id)
         //{
         //    ViewModelProducto pro = new ViewModelProducto();
 
-        //    //ServicioProductosClient proxy = new ServicioProductosClient();
+        //    ServicioProductosClient proxy = new ServicioProductosClient();
 
-        //    //DTOProducto buscado = proxy.BuscarPorId(id);
+        //    DTOProducto buscado = proxy.BuscarPorId(id);
 
-        //    //if (buscado != null)
-        //    //{
-        //    //    pro = new ViewModelProducto()
-        //    //    {
-        //    //        Codigo = buscado.Codigo,
-        //    //        Nombre = buscado.Nombre
-        //    //    };
-        //    //}
+        //    if (buscado != null)
+        //    {
+        //        pro = new ViewModelProducto()
+        //        {
+        //            Codigo = buscado.Codigo,
+        //            Nombre = buscado.Nombre
+        //        };
+        //    }
 
         //    return View(pro);
         //}
@@ -113,6 +113,14 @@ namespace WebMVC.Controllers
         {
             if (Session["rol"] == null)
                 return Redirect("/Home/Index");
+
+            ServicioProductosClient proxy = new ServicioProductosClient();
+
+            
+            //List<Producto> lista = proxy.TraerTodo();
+
+            proxy.Close(); 
+            //en la clase dijo q era importante cerrarlo
 
             return View(FachadaPortLog.TraerTodosLosProductos());
         }
