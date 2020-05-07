@@ -78,13 +78,23 @@ namespace PortLog
 
             #region Producto
 
-            Console.WriteLine(FachadaPortLog.ModificacionProducto(2,5));
+            // Console.WriteLine(FachadaPortLog.ModificacionProducto(2,5));
             //Console.WriteLine(FachadaPortLog.BuscarProductoPorId(2));
 
             #endregion
 
             #region Importacion
 
+
+            DateTime fchIngreso = new DateTime(2020, 06, 01);
+            DateTime fchSalida = new DateTime(2020, 06, 03);
+
+
+            Console.WriteLine(FachadaPortLog.AltaImportacion(
+                fchIngreso,fchSalida, 3, 15,
+            100, 234567890123));
+
+            
             #endregion
 
 

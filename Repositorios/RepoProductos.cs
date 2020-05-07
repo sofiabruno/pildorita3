@@ -124,10 +124,14 @@ namespace Repositorios
                 {
                     Producto prod = new Producto
                     {
+                        Id = reader.GetInt32(0),
                         Codigo = reader.GetString(1),
                         Nombre = reader.GetString(2),
-                        //Peso = reader.GetDecimal(2),
-                       
+                        Peso = reader.GetDecimal(3),
+                        //Cliente.Rut = reader.Get(4),
+                        RUT = reader.GetInt64(4),
+                        Stock = reader.GetInt32(5)
+
                     };
 
                     productos.Add(prod);

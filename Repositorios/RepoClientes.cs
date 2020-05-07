@@ -196,6 +196,48 @@ namespace Repositorios
             }
 
             return cli;
-        }     
+        }
+
+        public Cliente BuscarPorRut(long rut)
+        {
+            Cliente cli = null;
+
+            //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+            SqlConnection con = new SqlConnection(strCon);
+
+            string sql = "select * from Clientes where RUT=@rut";
+            SqlCommand cmd = new SqlCommand(sql, con);
+
+            cmd.Parameters.AddWithValue("@rut", rut);
+
+            try
+            {
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    cli = new Cliente
+                    {
+                        Id = reader.GetInt32(0),
+                        Rut = reader.GetInt64(1),
+                        Nombre = reader.GetString(2),
+                        Antiguedad = reader.GetDateTime(3)
+                    };
+                }
+
+                con.Close();
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open) con.Close();
+            }
+
+            return cli;
+        }
     }
 }

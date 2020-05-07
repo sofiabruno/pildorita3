@@ -144,6 +144,12 @@ namespace Repositorios
             RepoClientes repoCli = new RepoClientes();
             return repoCli.BuscarPorId(id);
         }
+
+        public static Cliente BuscarClientePorRut(long rut)
+        {
+            RepoClientes repoCli = new RepoClientes();
+            return repoCli.BuscarPorRut(rut);
+        }
         #endregion
 
         #region Producto ----------------------------------------------------------------------------------
@@ -183,7 +189,31 @@ namespace Repositorios
 
         #region Importacion -------------------------------------------------------------------------------
 
+        public static bool AltaImportacion(
+            DateTime fchIngreso, DateTime fchSalida, int idProd, int cant,
+            decimal precioUnit, long rut)
+        {
+            bool ret = false;
 
+            Producto p = BuscarProductoPorId(idProd);
+            Cliente cli = BuscarClientePorRut(rut);
+
+            Importacion importacion = new Importacion()
+            {
+                FechaIngreso = fchIngreso,
+                SalidaPrevista = fchSalida,
+                Producto = p,
+                Cantidad = cant,
+                PrecioUnitario = precioUnit,
+                Cliente = cli
+
+            };
+
+            RepoImportaciones repoImp = new RepoImportaciones();
+            ret = repoImp.Alta(importacion);
+
+            return ret;
+        }
 
         #endregion
 

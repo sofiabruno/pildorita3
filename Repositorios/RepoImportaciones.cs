@@ -21,7 +21,7 @@ namespace Repositorios
             //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(strCon);
 
-            string sql = "insert into Importaciones(FechaIngreso, SalidaPrevista, ProductoID, Cantidad, PrecioUnitario) values(@fchIng, @salPrev, @ProdId, @cant, @precio);";
+            string sql = "insert into Importaciones(FechaIngreso, SalidaPrevista, ProductoID, Cantidad, PrecioUnitario, ClienteID) values(@fchIng, @salPrev, @ProdId, @cant, @precio, @cliId);";
             SqlCommand cmd = new SqlCommand(sql, con);
 
             cmd.Parameters.AddWithValue("@fchIng", obj.FechaIngreso);
@@ -29,7 +29,9 @@ namespace Repositorios
             cmd.Parameters.AddWithValue("@ProdId", obj.Producto.Id);
             cmd.Parameters.AddWithValue("@cant", obj.Cantidad);
             cmd.Parameters.AddWithValue("@precio", obj.PrecioUnitario);
-            
+            cmd.Parameters.AddWithValue("@cliId", obj.Cliente.Id);
+
+
 
 
             try
