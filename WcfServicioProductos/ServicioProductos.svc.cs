@@ -16,10 +16,10 @@ namespace WcfServicioProductos
       
         public List<DTOproducto> TraerTodo()
         {
+            //creo mi lista vacia de dtoProds
             List<DTOproducto> listProd = new List<DTOproducto>();
 
             RepoProductos repo = new RepoProductos();
-
             List<Producto> lista = repo.TraerTodos();
 
             foreach (Producto producto in lista)

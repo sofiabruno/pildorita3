@@ -120,14 +120,14 @@ namespace WebMVC.Controllers
 
             //controlo que la lista venga vacia?
 
-            //convierto mi lista de DTO a lista de productos comunes
+            //convierto mi lista de DTO a lista de productos comunes?
                      
             proxy.Close(); 
             //en la clase dijo q era importante cerrarlo
 
             return View(FachadaPortLog.TraerTodosLosProductos());
 
-            return View(listaDTO);
+            //return View(listaDTO);
 
         }
 

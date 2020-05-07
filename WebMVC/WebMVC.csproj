@@ -122,6 +122,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Connected Services\ServicioImportaciones\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\WFCProducto\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -139,10 +144,27 @@
     <Compile Include="ViewModels\ViewModelUsuario.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\ServicioImportaciones\ServicioImportacion.wsdl" />
+    <None Include="Connected Services\ServicioImportaciones\ServicioImportacion.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioImportaciones\ServicioImportacion1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioImportaciones\ServicioImportacion2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\WFCProducto\ServicioProductos.disco" />
     <None Include="Connected Services\WFCProducto\configuration91.svcinfo" />
     <None Include="Connected Services\WFCProducto\configuration.svcinfo" />
     <None Include="Connected Services\WFCProducto\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ServicioImportaciones\ServicioImportacion.disco" />
+    <None Include="Connected Services\ServicioImportaciones\configuration91.svcinfo" />
+    <None Include="Connected Services\ServicioImportaciones\configuration.svcinfo" />
+    <None Include="Connected Services\ServicioImportaciones\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -243,6 +265,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServicioImportaciones\" />
     <WCFMetadataStorage Include="Connected Services\WFCProducto\" />
   </ItemGroup>
   <PropertyGroup>
