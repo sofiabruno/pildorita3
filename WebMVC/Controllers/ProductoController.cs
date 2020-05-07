@@ -125,7 +125,7 @@ namespace WebMVC.Controllers
             proxy.Close(); 
             //en la clase dijo q era importante cerrarlo
 
-            //return View(FachadaPortLog.TraerTodosLosProductos());
+            return View(FachadaPortLog.TraerTodosLosProductos());
 
             return View(listaDTO);
 
