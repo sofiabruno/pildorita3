@@ -114,17 +114,20 @@ namespace WebMVC.Controllers
             if (Session["rol"] == null)
                 return Redirect("/Home/Index");
 
-            ServicioProductosClient proxy = new ServicioProductosClient();
+            //consumo mi servicio y me traigo una lista 
+           ServicioProductosClient proxy = new ServicioProductosClient();
+           List<DTOproducto> listaDTO = proxy.TraerTodo().ToList();
 
+            //controlo que la lista venga vacia?
 
-           List<DTOproducto> lista = proxy.TraerTodo().ToList();
-
+            //convierto mi lista de DTO a lista de productos comunes
+                     
             proxy.Close(); 
             //en la clase dijo q era importante cerrarlo
 
-            return View(FachadaPortLog.TraerTodosLosProductos());
+            //return View(FachadaPortLog.TraerTodosLosProductos());
 
-            //return View(lista);
+            return View(listaDTO);
 
         }
 

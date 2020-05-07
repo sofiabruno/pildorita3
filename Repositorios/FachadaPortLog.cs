@@ -198,6 +198,14 @@ namespace Repositorios
             Producto p = BuscarProductoPorId(idProd);
             Cliente cli = BuscarClientePorRut(rut);
 
+
+            //al realizar una importación a un determinado cliente,
+            //el producto importado debe ser uno de los productos 
+            //de ese cliente(controlar).
+            //Por eso es necesario saber a qué cliente corresponde cada producto.
+
+            //controlaaaaaaaaaar!
+
             Importacion importacion = new Importacion()
             {
                 FechaIngreso = fchIngreso,

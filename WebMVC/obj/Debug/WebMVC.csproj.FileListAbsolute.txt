@@ -167,8 +167,8 @@ C:\Users\Sofia\Documents\GitHub\pildorita3\WebMVC\bin\es\System.Web.Razor.resour
 C:\Users\Sofia\Documents\GitHub\pildorita3\WebMVC\bin\es\System.Web.WebPages.resources.dll
 C:\Users\Sofia\Documents\GitHub\pildorita3\WebMVC\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Sofia\Documents\GitHub\pildorita3\WebMVC\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Users\Sofia\Documents\GitHub\pildorita3\WebMVC\obj\Debug\WebMVC.csprojAssemblyReference.cache
 C:\Users\Sofia\Documents\GitHub\pildorita3\WebMVC\obj\Debug\WebMVC.csproj.CoreCompileInputs.cache
 C:\Users\Sofia\Documents\GitHub\pildorita3\WebMVC\obj\Debug\WebMVC.csproj.CopyComplete
 C:\Users\Sofia\Documents\GitHub\pildorita3\WebMVC\obj\Debug\WebMVC.dll
 C:\Users\Sofia\Documents\GitHub\pildorita3\WebMVC\obj\Debug\WebMVC.pdb
+C:\Users\Sofia\Documents\GitHub\pildorita3\WebMVC\obj\Debug\WebMVC.csprojAssemblyReference.cache

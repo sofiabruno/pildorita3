@@ -27,7 +27,8 @@ namespace WcfServicioProductos
                 DTOproducto produ = new DTOproducto
                 {
                     Codigo = producto.Codigo,
-                    Nombre = producto.Nombre
+                    Nombre = producto.Nombre,
+                    Stock = producto.Stock
                     
                 };
                 listProd.Add(produ);

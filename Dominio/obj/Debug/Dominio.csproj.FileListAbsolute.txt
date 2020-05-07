@@ -6,7 +6,6 @@ C:\Users\Fede\Source\Repos\pildorita3\Dominio\obj\Debug\Dominio.pdb
 C:\Users\Fede\Source\Repos\pildorita3\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
 C:\Users\Sofia\Documents\GitHub\pildorita3\Dominio\bin\Debug\Dominio.dll
 C:\Users\Sofia\Documents\GitHub\pildorita3\Dominio\bin\Debug\Dominio.pdb
-C:\Users\Sofia\Documents\GitHub\pildorita3\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
 C:\Users\Sofia\Documents\GitHub\pildorita3\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\Sofia\Documents\GitHub\pildorita3\Dominio\obj\Debug\Dominio.dll
 C:\Users\Sofia\Documents\GitHub\pildorita3\Dominio\obj\Debug\Dominio.pdb

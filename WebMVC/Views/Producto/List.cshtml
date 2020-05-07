@@ -1,15 +1,17 @@
-﻿@model IEnumerable<Dominio.Producto>
+﻿@model IEnumerable<WebMVC.WFCProducto.DTOproducto>
 
 @{
     ViewBag.Title = "List";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>List</h2>
+<h2>Lista de todos los productos</h2>
 
 @*<p>
     @Html.ActionLink("Create New", "Create")
 </p>*@
+
+<br />
 <table class="table">
     <tr>
         <th>
@@ -18,9 +20,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Nombre)
         </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.Peso)
-        </th>*@
+        
         <th></th>
     </tr>
 
@@ -33,12 +33,9 @@
             @Html.DisplayFor(modelItem => item.Nombre)
         </td>
         @*<td>
-            @Html.DisplayFor(modelItem => item.Peso)
-        </td>*@
-        @*<td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
         </td>*@
     </tr>
 }
