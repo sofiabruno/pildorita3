@@ -16,8 +16,8 @@ namespace WcfServicioProductos
         [DataMember]
         public string Nombre { get; set; }
 
-        //[DataMember]
-        //public int Stock { get; set; }
+        [DataMember]
+        public int Stock { get; set; }
 
     }
 }

@@ -45,8 +45,8 @@ namespace PortLog
             #endregion
 
             #region Cliente
-            DateTime fecha = new DateTime(2020, 04, 19);
-            Console.WriteLine(FachadaPortLog.AltaCliente("PruebaNoche", 111, fecha));
+            //DateTime fecha = new DateTime(2020, 04, 19);
+            //Console.WriteLine(FachadaPortLog.AltaCliente("PruebaNoche", 111, fecha));
 
             //Console.WriteLine(FachadaPortLog.BajaCliente(111));
 
@@ -77,6 +77,9 @@ namespace PortLog
             #endregion
 
             #region Producto
+
+            Console.WriteLine(FachadaPortLog.ModificacionProducto(2,5));
+            //Console.WriteLine(FachadaPortLog.BuscarProductoPorId(2));
 
             #endregion
 

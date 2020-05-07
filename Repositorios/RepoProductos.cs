@@ -16,28 +16,49 @@ namespace Repositorios
 
         public bool Alta(Producto obj)
         {
-            bool ret = false;
+            throw new NotImplementedException();
+        }
+
+        public bool Baja(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Producto BuscarPorId(int id)
+        {
+            Producto prod = null;
 
             //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(strCon);
 
-            string sql = "insert into Productos(Codigo, Nombre, Peso, Rut) values (@cod, @nom, @pes, @rut)";
+            string sql = "select * from Productos where ProductoId=@id";
             SqlCommand cmd = new SqlCommand(sql, con);
 
-            cmd.Parameters.AddWithValue("@cod", obj.Codigo);
-            cmd.Parameters.AddWithValue("@nom", obj.Nombre);
-            cmd.Parameters.AddWithValue("@tas", obj.Peso);
-            cmd.Parameters.AddWithValue("@rut", obj.Cliente.Rut);
-
-            // El rut es FK, como se trae?
+            cmd.Parameters.AddWithValue("@id", id);
 
             try
             {
                 con.Open();
-                int afectadas = cmd.ExecuteNonQuery();
-                con.Close();
+                SqlDataReader reader = cmd.ExecuteReader();
 
-                ret = afectadas == 1;
+                if (reader.Read())
+                {
+                                       
+                    prod = new Producto
+                    {
+                        Id = reader.GetInt32(0),
+                        Codigo = reader.GetString(1),
+                        Nombre = reader.GetString(2),
+                        Peso = reader.GetDecimal(3),
+                        //Cliente.Rut = reader.Get(4),
+                        RUT = reader.GetInt64(4),
+                        Stock = reader.GetInt32(5)
+
+
+                    };
+                }
+
+                con.Close();
             }
             catch
             {
@@ -48,23 +69,41 @@ namespace Repositorios
                 if (con.State == ConnectionState.Open) con.Close();
             }
 
-            return ret;
-        }
-
-        public bool Baja(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Producto BuscarPorId(int id)
-        {
-            throw new NotImplementedException();
+            return prod;
         }
 
         public bool Modificacion(Producto obj)
         {
-            throw new NotImplementedException();
-        }
+                bool ret = false;
+
+                //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+                SqlConnection con = new SqlConnection(strCon);
+
+                string sql = "update Productos set Stock=@stock where ProductoId=@id;";
+                SqlCommand cmd = new SqlCommand(sql, con);
+
+                cmd.Parameters.AddWithValue("@stock", obj.Stock);
+                cmd.Parameters.AddWithValue("@id", obj.Id);
+
+                try
+                {
+                    con.Open();
+                    int afectadas = cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    ret = afectadas == 1;
+                }
+                catch
+                {
+                    throw;
+                }
+                finally
+                {
+                    if (con.State == ConnectionState.Open) con.Close();
+                }
+
+                return ret;
+            }
 
         public List<Producto> TraerTodos()
         {
@@ -83,7 +122,7 @@ namespace Repositorios
 
                 while (reader.Read())
                 {
-                    Producto usr = new Producto
+                    Producto prod = new Producto
                     {
                         Codigo = reader.GetString(1),
                         Nombre = reader.GetString(2),
@@ -91,7 +130,7 @@ namespace Repositorios
                        
                     };
 
-                    productos.Add(usr);
+                    productos.Add(prod);
                 }
 
                 con.Close();

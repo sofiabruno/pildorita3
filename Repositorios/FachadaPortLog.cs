@@ -155,6 +155,29 @@ namespace Repositorios
             return repoProds.TraerTodos();
         }
 
+        public static bool ModificacionProducto(int id, int stock)
+        {
+            bool ret = false;
+
+            RepoProductos repoProds = new RepoProductos();
+
+            Producto p = repoProds.BuscarPorId(id);
+
+            p.Stock = stock;
+
+            ret = repoProds.Modificacion(p);
+
+
+            return ret;
+            
+        }
+
+        public static Producto BuscarProductoPorId(int id)
+        {
+            RepoProductos repoProds = new RepoProductos();
+            return repoProds.BuscarPorId(id);
+        }
+
 
         #endregion
 

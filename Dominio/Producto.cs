@@ -12,6 +12,8 @@ namespace Dominio
         public string Codigo { get; set; }
         public string Nombre { get; set; }
         public decimal Peso { get; set; }
-        public Cliente Cliente { get; set; }
+        //public Cliente Cliente { get; set; }
+        public long RUT { get; set; }
+        public int Stock { get; set; }
     }
 }

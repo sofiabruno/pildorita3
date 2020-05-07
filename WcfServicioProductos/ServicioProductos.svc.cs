@@ -16,10 +16,10 @@ namespace WcfServicioProductos
       
         public List<DTOproducto> TraerTodo()
         {
+            List<DTOproducto> listProd = new List<DTOproducto>();
+
             RepoProductos repo = new RepoProductos();
 
-            List<DTOproducto> listProd = new List<DTOproducto>();                     
-          
             List<Producto> lista = repo.TraerTodos();
 
             foreach (Producto producto in lista)
@@ -28,7 +28,7 @@ namespace WcfServicioProductos
                 {
                     Codigo = producto.Codigo,
                     Nombre = producto.Nombre
-
+                    
                 };
                 listProd.Add(produ);
 
