@@ -14,5 +14,6 @@ namespace Dominio
         public long Rut { get; set; }
         [DataType(DataType.Date)]
         public DateTime Antiguedad { get; set; }
+        List<Producto> Productos { get; set; }
     }
 }

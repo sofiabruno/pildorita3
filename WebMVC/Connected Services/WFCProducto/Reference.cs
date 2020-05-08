@@ -28,6 +28,9 @@ namespace WebMVC.WFCProducto {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NombreField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int StockField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -60,6 +63,19 @@ namespace WebMVC.WFCProducto {
                 if ((object.ReferenceEquals(this.NombreField, value) != true)) {
                     this.NombreField = value;
                     this.RaisePropertyChanged("Nombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Stock {
+            get {
+                return this.StockField;
+            }
+            set {
+                if ((this.StockField.Equals(value) != true)) {
+                    this.StockField = value;
+                    this.RaisePropertyChanged("Stock");
                 }
             }
         }
