@@ -98,7 +98,69 @@ namespace Repositorios
 
         public List<Importacion> TraerTodos()
         {
-            throw new NotImplementedException();
+            List<Importacion> lista = new List<Importacion>();
+
+            SqlConnection con = new SqlConnection(strCon);
+
+            string sql = "select * from Importaciones i, Productos p, clientes ;";
+
+            SqlCommand cmd = new SqlCommand(sql, con);
+
+           
+            try
+            {
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Cliente cli = new Cliente
+                    {
+                        Id = reader.GetInt32(11),
+                        Rut = reader.GetInt64(12),
+                        Nombre = reader.GetString(13),
+                        Antiguedad = reader.GetDateTime(14)
+                    };
+
+                    Producto p = new Producto
+                    {
+
+                        Id = reader.GetInt32(6),
+                        Codigo = reader.GetString(7),
+                        Nombre = reader.GetString(8),
+                        Peso = reader.GetDecimal(9),
+                        Cliente = cli
+
+                    };
+
+                    Importacion import = new Importacion
+                    {
+                        Id = reader.GetInt32(0),
+                        FechaIngreso = reader.GetDateTime(1),
+                        SalidaPrevista = reader.GetDateTime(2),
+                        Producto = p,
+                        Cantidad = reader.GetInt32(4),
+                        PrecioUnitario = reader.GetDecimal(5)
+
+                    };
+
+                    lista.Add(import);
+                }
+
+                con.Close();
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open) con.Close();
+            }
+
+
+
+            return lista;
         }
 
         public List<Importacion> TraerImportacionesPorProd(int idProd)
@@ -148,6 +210,75 @@ namespace Repositorios
                       Cantidad = reader.GetInt32(4),
                       PrecioUnitario = reader.GetDecimal(5)
                      
+                    };
+
+                    lista.Add(import);
+                }
+
+                con.Close();
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open) con.Close();
+            }
+
+
+
+            return lista;
+
+        }
+
+        public List<Importacion> TraerImportacionesPorCliente(long rut)
+        {
+            List<Importacion> lista = new List<Importacion>();
+
+            SqlConnection con = new SqlConnection(strCon);
+
+            string sql = "select * from Importaciones i, Productos p, clientes c where i.ProductoID = p.ProductoID and p.ClienteID = c.ClienteID and c.Rut = @RUT;";
+
+            SqlCommand cmd = new SqlCommand(sql, con);
+
+            cmd.Parameters.AddWithValue("@RUT", rut);
+
+            try
+            {
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Cliente cli = new Cliente
+                    {
+                        Id = reader.GetInt32(11),
+                        Rut = reader.GetInt64(12),
+                        Nombre = reader.GetString(13),
+                        Antiguedad = reader.GetDateTime(14)
+                    };
+
+                    Producto p = new Producto
+                    {
+
+                        Id = reader.GetInt32(6),
+                        Codigo = reader.GetString(7),
+                        Nombre = reader.GetString(8),
+                        Peso = reader.GetDecimal(9),
+                        Cliente = cli
+
+                    };
+
+                    Importacion import = new Importacion
+                    {
+                        Id = reader.GetInt32(0),
+                        FechaIngreso = reader.GetDateTime(1),
+                        SalidaPrevista = reader.GetDateTime(2),
+                        Producto = p,
+                        Cantidad = reader.GetInt32(4),
+                        PrecioUnitario = reader.GetDecimal(5)
+
                     };
 
                     lista.Add(import);

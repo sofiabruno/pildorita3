@@ -173,38 +173,7 @@ namespace Repositorios
 
         #region Importacion -------------------------------------------------------------------------------
 
-        public static bool AltaImportacion(
-            DateTime fchIngreso, DateTime fchSalida, int idProd, int cant,
-            decimal precioUnit)
-        {
-            bool ret = false;
-
-            Producto p = BuscarProductoPorId(idProd);
-            
-            //al realizar una importación a un determinado cliente,
-            //el producto importado debe ser uno de los productos 
-            //de ese cliente(controlar).
-            //Por eso es necesario saber a qué cliente corresponde cada producto.
-
-            //controlaaaaaaaaaar!
-
-            Importacion importacion = new Importacion()
-            {
-                FechaIngreso = fchIngreso,
-                SalidaPrevista = fchSalida,
-                Producto = p,
-                Cantidad = cant,
-                PrecioUnitario = precioUnit,
-                Cliente = cli
-
-            };
-
-            RepoImportaciones repoImp = new RepoImportaciones();
-            ret = repoImp.Alta(importacion);
-
-            return ret;
-        }
-
+        
         #endregion
 
     }
