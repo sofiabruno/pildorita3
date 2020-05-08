@@ -8,7 +8,7 @@ namespace WebMVC.ViewModels
 {
     public class ViewModelProducto
     {
-
+        [Display(Name = "Código del producto")]
         public string Codigo { get; set; }
 
         

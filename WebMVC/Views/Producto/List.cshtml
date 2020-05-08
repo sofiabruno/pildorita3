@@ -5,11 +5,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>List</h2>
+<h2>Lista de productos</h2>
+<br />
+<h4>Stock actualizado a la fecha de hoy (@DateTime.Now.ToShortDateString())</h4>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<br />
+<br />
 <table class="table">
     <tr>
         <th>
@@ -35,11 +36,13 @@
         <td>
             @Html.DisplayFor(modelItem => item.Stock)
         </td>
+       @if (Session["rol"].ToString() == "deposito")
+        {
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Importar", "Edit", new { /* id=item.PrimaryKey */ })
+
         </td>
+        }
     </tr>
 }
 

@@ -41,14 +41,7 @@
 
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos<b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    @*<li>@Html.ActionLink("Create", "Create", "Producto")</li>*@
-                                    <li>@Html.ActionLink("List", "List", "Producto")</li>
-
-                                </ul>
-                            </li>
+                            <li>@Html.ActionLink("Productos", "List", "Producto")</li>
                         }
 
                         if (Session["rol"].ToString() == "deposito")
@@ -70,14 +63,7 @@
 
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos<b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    @*<li>@Html.ActionLink("Create", "Create", "Producto")</li>*@
-                                    <li>@Html.ActionLink("List", "List", "Producto")</li>
-
-                                </ul>
-                            </li>
+                            <li>@Html.ActionLink("Productos", "List", "Producto")</li>
                         }
 
 
