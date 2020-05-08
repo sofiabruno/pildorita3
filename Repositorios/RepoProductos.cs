@@ -31,7 +31,9 @@ namespace Repositorios
             //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(strCon);
 
-            string sql = "select * from Productos where ProductoId=@id";
+            string sql = "select * from productos p, clientes c where p.productoId = @id and c.ClienteID = p.ClienteID";
+
+
             SqlCommand cmd = new SqlCommand(sql, con);
 
             cmd.Parameters.AddWithValue("@id", id);
@@ -43,6 +45,14 @@ namespace Repositorios
 
                 if (reader.Read())
                 {
+                    Cliente elcliente = new Cliente
+                    {
+                        Id = reader.GetInt32(4),
+                        Rut = reader.GetInt64(6),
+                        Nombre = reader.GetString(7),
+                        Antiguedad = reader.GetDateTime(8)
+
+                    };
                                        
                     prod = new Producto
                     {
@@ -50,9 +60,7 @@ namespace Repositorios
                         Codigo = reader.GetString(1),
                         Nombre = reader.GetString(2),
                         Peso = reader.GetDecimal(3),
-                        //Cliente.Rut = reader.Get(4),
-                        RUT = reader.GetInt64(4),
-                        Stock = reader.GetInt32(5)
+                        Cliente = elcliente
 
 
                     };
@@ -74,36 +82,8 @@ namespace Repositorios
 
         public bool Modificacion(Producto obj)
         {
-                bool ret = false;
-
-                //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
-                SqlConnection con = new SqlConnection(strCon);
-
-                string sql = "update Productos set Stock=@stock where ProductoId=@id;";
-                SqlCommand cmd = new SqlCommand(sql, con);
-
-                cmd.Parameters.AddWithValue("@stock", obj.Stock);
-                cmd.Parameters.AddWithValue("@id", obj.Id);
-
-                try
-                {
-                    con.Open();
-                    int afectadas = cmd.ExecuteNonQuery();
-                    con.Close();
-
-                    ret = afectadas == 1;
-                }
-                catch
-                {
-                    throw;
-                }
-                finally
-                {
-                    if (con.State == ConnectionState.Open) con.Close();
-                }
-
-                return ret;
-            }
+            throw new NotImplementedException();
+        }
 
         public List<Producto> TraerTodos()
         {
@@ -112,8 +92,7 @@ namespace Repositorios
             //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(strCon);
 
-            string sql = "select * from Productos;";
-            // corregir este select!
+            string sql = "select * from productos p, clientes c where c.ClienteID = p.ClienteID;";
             SqlCommand cmd = new SqlCommand(sql, con);
 
             try
@@ -123,14 +102,24 @@ namespace Repositorios
 
                 while (reader.Read())
                 {
+                    Cliente cadaCliente = new Cliente
+                    {
+                        Id = reader.GetInt32(4),
+                        Rut = reader.GetInt64(6),
+                        Nombre = reader.GetString(7),
+                        Antiguedad = reader.GetDateTime(8)
+
+                    };
+
+
                     Producto prod = new Producto
                     {
                         Id = reader.GetInt32(0),
                         Codigo = reader.GetString(1),
                         Nombre = reader.GetString(2),
                         Peso = reader.GetDecimal(3),
-                       // arreglar Cliente = cli
-                      
+                        Cliente = cadaCliente
+
 
                     };
 

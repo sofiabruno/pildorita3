@@ -191,14 +191,12 @@ namespace Repositorios
 
         public static bool AltaImportacion(
             DateTime fchIngreso, DateTime fchSalida, int idProd, int cant,
-            decimal precioUnit, long rut)
+            decimal precioUnit)
         {
             bool ret = false;
 
             Producto p = BuscarProductoPorId(idProd);
-            Cliente cli = BuscarClientePorRut(rut);
-
-
+            
             //al realizar una importación a un determinado cliente,
             //el producto importado debe ser uno de los productos 
             //de ese cliente(controlar).

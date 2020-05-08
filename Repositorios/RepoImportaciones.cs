@@ -126,7 +126,7 @@ namespace Repositorios
                         Nombre = reader.GetString(9),
                         Peso = reader.GetDecimal(10),
                         //RUT = reader.GetInt64(11),
-                        Cliente
+                        //Cliente
 
                     };
                     
