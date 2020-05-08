@@ -9,6 +9,7 @@ using Repositorios;
 using WebMVC.ViewModels;
 using WebMVC.WFCProducto;
 
+
 namespace WebMVC.Controllers
 {
     public class ProductoController : Controller
@@ -120,14 +121,26 @@ namespace WebMVC.Controllers
 
             //controlo que la lista venga vacia?
 
-            //convierto mi lista de DTO a lista de productos comunes?
-                     
-            proxy.Close(); 
-            //en la clase dijo q era importante cerrarlo
+            List<ViewModelProducto> lista = new List<ViewModelProducto>();
 
-            return View(FachadaPortLog.TraerTodosLosProductos());
+            foreach (DTOproducto dtoProd in listaDTO)
+            {
+                ViewModelProducto vm = new ViewModelProducto()
+                {
+                    Codigo = dtoProd.Codigo,
+                    Nombre = dtoProd.Nombre,
+                    Stock = dtoProd.Stock
+                };
 
-            //return View(listaDTO);
+                lista.Add(vm);
+
+
+            }              
+        
+            proxy.Close();
+            //en la clase el profe dijo q era importante cerrarlo
+
+            return View(lista);
 
         }
 
