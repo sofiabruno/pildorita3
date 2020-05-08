@@ -301,5 +301,30 @@ namespace Repositorios
 
         }
 
+        public int CalcularStockDeUnProd (int idProd)
+        {
+            DateTime fchHoy = DateTime.Today;
+
+            List<Importacion> listaProd = new List<Importacion>();
+
+            listaProd = TraerImportacionesPorProd(idProd);
+
+            int stock = 0;
+
+            foreach (Importacion importacion  in listaProd)
+            {
+                
+                if (importacion.FechaIngreso <= fchHoy || importacion.SalidaPrevista >= fchHoy)
+                {
+                    stock += importacion.Cantidad;
+                }
+            }
+
+            return stock;
+
+
+
+        }
+
     }
 }

@@ -86,13 +86,13 @@ namespace PortLog
             #region Importacion
 
 
-            DateTime fchIngreso = new DateTime(2020, 05, 01);
-            DateTime fchSalida = new DateTime(2020, 10, 17);
+            //DateTime fchIngreso = new DateTime(2020, 05, 01);
+            //DateTime fchSalida = new DateTime(2020, 10, 17);
 
 
-            Console.WriteLine(FachadaPortLog.AltaImportacion(
-                fchIngreso, fchSalida, 1, 655,
-            200, 234567890123));
+            //Console.WriteLine(FachadaPortLog.AltaImportacion(
+            //    fchIngreso, fchSalida, 1, 655,
+            //200, 234567890123));
 
 
             #endregion

@@ -30,7 +30,7 @@ namespace WcfServicioImportaciones
                 SalidaPrevista = importacion.SalidaPrevista,
                 Producto = prod,
                 Cantidad = importacion.Cantidad,
-                Cliente = cli
+                
 
             };
 

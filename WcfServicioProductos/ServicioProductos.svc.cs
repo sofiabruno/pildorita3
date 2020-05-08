@@ -20,26 +20,23 @@ namespace WcfServicioProductos
             List<DTOproducto> listProd = new List<DTOproducto>();
 
             RepoProductos repo = new RepoProductos();
+            RepoImportaciones repoImp = new RepoImportaciones();
+
             List<Producto> lista = repo.TraerTodos();
 
             foreach (Producto producto in lista)
             {
                 int idProd = producto.Id;
-                List<Producto> listaId = 
+                int calcStock = repoImp.CalcularStockDeUnProd(idProd);
 
                 DTOproducto produ = new DTOproducto
                 {
                     Codigo = producto.Codigo,
                     Nombre = producto.Nombre,
-                    Stock = producto.Stock
+                    Stock = calcStock                    
 
-                    //si yo quisiera hacer:
-                    //Stock = repo.CalcularStock
-                    //tengo idea q el dto no pasa x la fachada
-                    //xo se puede poner un metodo en el repoprod q no sea implementado de irepo?
-                    
-                    
                 };
+
                 listProd.Add(produ);
 
             }
