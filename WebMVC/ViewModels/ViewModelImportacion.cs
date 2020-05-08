@@ -26,7 +26,8 @@ namespace WebMVC.ViewModels
 
 
         [Required]
-        [RegularExpression(@"^[0-9]$", ErrorMessage = "Sólo números enteros")]
+        //corregir xa q sean solo numeros enteros
+        //[RegularExpression(@"^[0-9]$", ErrorMessage = "Sólo números enteros")]
         public int Cantidad { get; set; }
 
         [Required]

@@ -102,7 +102,7 @@ namespace Repositorios
 
             SqlConnection con = new SqlConnection(strCon);
 
-            string sql = "select * from Importaciones i, Productos p, clientes ;";
+            string sql = "select * from Importaciones i, Productos p, clientes c where i.ProductoID = p.ProductoID and p.ClienteID = c.ClienteID ;";
 
             SqlCommand cmd = new SqlCommand(sql, con);
 
