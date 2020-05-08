@@ -18,6 +18,9 @@ namespace Repositorios
         {
             bool ret = false;
 
+            //verificar que el rut que se ingresa
+            //en el form corresponda con objerto.producto.cliente.rut
+
             //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
             SqlConnection con = new SqlConnection(strCon);
 
@@ -104,7 +107,7 @@ namespace Repositorios
 
             SqlConnection con = new SqlConnection(strCon);
 
-            string sql = "select*from Importaciones, Productos where Importaciones.ProductoID = Productos.ProductoID and Productos.ProductoID=@id);";
+            string sql = "select * from Importaciones i, Productos p, clientes c where i.ProductoID = p.ProductoID and p.ClienteID = c.ClienteID and i.ProductoID =@id;";
 
             SqlCommand cmd = new SqlCommand(sql, con);
 
@@ -117,16 +120,22 @@ namespace Repositorios
 
                 while (reader.Read())
                 {
+                    Cliente cli = new Cliente
+                    {
+                        Id = reader.GetInt32(11),
+                        Rut = reader.GetInt64(12),
+                        Nombre = reader.GetString(13),
+                        Antiguedad = reader.GetDateTime(14)
+                    };
 
                     Producto p = new Producto
                     {
-                        //atencion  corregir cuando elimine la FK de la tablarranca en 7 si hay cliente dentro de import
-                        Id = reader.GetInt32(7),
-                        Codigo = reader.GetString(8),
-                        Nombre = reader.GetString(9),
-                        Peso = reader.GetDecimal(10),
-                        //RUT = reader.GetInt64(11),
-                        //Cliente
+                        
+                        Id = reader.GetInt32(6),
+                        Codigo = reader.GetString(7),
+                        Nombre = reader.GetString(8),
+                        Peso = reader.GetDecimal(9),
+                        Cliente = cli
 
                     };
                     
