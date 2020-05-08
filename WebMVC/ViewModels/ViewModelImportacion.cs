@@ -13,13 +13,17 @@ namespace WebMVC.ViewModels
         [DataType(DataType.Date)]
         public DateTime FechaIngreso { get; set; }
 
+
+        //controlar q la fecha de salida no se menor q la de entrada
         [Required]
         [Display(Name = "Fecha de salida prevista")]
         [DataType(DataType.Date)]
+       
         public DateTime SalidaPrevista { get; set; }
 
        
         public int IdProducto { get; set; }
+
 
         [Required]
         [RegularExpression(@"^[0-9]$", ErrorMessage = "Sólo números enteros")]

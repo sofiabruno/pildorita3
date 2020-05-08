@@ -236,11 +236,12 @@
     <Content Include="Views\Cliente\Details.cshtml" />
     <Content Include="Views\Cliente\Edit.cshtml" />
     <Content Include="Views\Cliente\Delete.cshtml" />
+    <Content Include="Views\Importacion\List.cshtml" />
+    <Content Include="Views\Importacion\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Importacion\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -173,7 +173,13 @@ namespace Repositorios
 
         #region Importacion -------------------------------------------------------------------------------
 
-        
+        public static List<Importacion> TraerTodasLasImportaciones()
+        {
+            RepoImportaciones repo = new RepoImportaciones();
+
+            return repo.TraerTodos();
+        }
+
         #endregion
 
     }

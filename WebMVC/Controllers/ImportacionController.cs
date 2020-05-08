@@ -27,18 +27,48 @@ namespace WebMVC.Controllers
         // GET: Importacion/Create
         public ActionResult Create()
         {
+            if (Session["rol"] == null)
+                return Redirect("/Home/Index");
+
+            if (Session["rol"].ToString() == "admin")
+                return Redirect("/Home/Index");
+
             return View();
         }
 
         // POST: Importacion/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(ViewModelImportacion importacion)
         {
+            //convierto mis datos del cliente en DTOimportacion
+
+            DTOImportacion import = new DTOImportacion()
+            {
+                FechaIngreso= importacion.FechaIngreso,
+                SalidaPrevista = importacion.SalidaPrevista,
+                IdProducto = importacion.IdProducto,
+                Cantidad = importacion.Cantidad,
+                PrecioUnitario = importacion.PrecioUnitario                
+
+            };
+
+            //consumo mi servicio importaciones
+            ServicioImportacionClient proxy = new ServicioImportacionClient();
+                        
             try
             {
-                // TODO: Add insert logic here
+                bool ret = proxy.AltaImportacion(import);
 
-                return RedirectToAction("Index");
+                if (ret)
+                {
+                    return Redirect("/Importacion/List");
+                }
+                else
+                {
+                    ViewBag.Mensaje = "Ha ocurrido un error al ingresar la importacion";
+
+                    return View(importacion);
+                }
             }
             catch
             {
@@ -88,6 +118,17 @@ namespace WebMVC.Controllers
             {
                 return View();
             }
+        }
+
+        // GET: Importacion/List
+        [HttpGet]
+        public ActionResult List()
+        {
+            if (Session["rol"] == null)
+                return Redirect("/Home/Index");
+
+
+            return View(FachadaPortLog.TraerTodasLasImportaciones());
         }
     }
 }
