@@ -314,7 +314,7 @@ namespace Repositorios
             foreach (Importacion importacion  in listaProd)
             {
                 
-                if (importacion.FechaIngreso <= fchHoy || importacion.SalidaPrevista >= fchHoy)
+                if (importacion.FechaIngreso <= fchHoy && importacion.SalidaPrevista >= fchHoy)
                 {
                     stock += importacion.Cantidad;
                 }
