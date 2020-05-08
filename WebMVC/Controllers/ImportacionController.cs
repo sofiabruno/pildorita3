@@ -40,6 +40,8 @@ namespace WebMVC.Controllers
         [HttpPost]
         public ActionResult Create(ViewModelImportacion importacion)
         {
+            ViewBag.idProd = importacion.IdProducto;
+
             //convierto mis datos del cliente en DTOimportacion
 
             DTOImportacion import = new DTOImportacion()

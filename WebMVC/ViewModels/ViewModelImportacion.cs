@@ -31,7 +31,9 @@ namespace WebMVC.ViewModels
 
         [Required]
         [Display(Name = "Precio unitario")]
-        [RegularExpression(@"^(?!00000)[0-9]{5,5}$", ErrorMessage = "número con maximo dos decimales")]
+        
+        //corregir
+        //[RegularExpression(@"^(?!00000)[0-9]{5,5}$", ErrorMessage = "número con maximo dos decimales")]
         public decimal PrecioUnitario { get; set; }
     }
 }
