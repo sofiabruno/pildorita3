@@ -24,11 +24,20 @@ namespace WcfServicioProductos
 
             foreach (Producto producto in lista)
             {
+                int idProd = producto.Id;
+                List<Producto> listaId = 
+
                 DTOproducto produ = new DTOproducto
                 {
                     Codigo = producto.Codigo,
                     Nombre = producto.Nombre,
                     Stock = producto.Stock
+
+                    //si yo quisiera hacer:
+                    //Stock = repo.CalcularStock
+                    //tengo idea q el dto no pasa x la fachada
+                    //xo se puede poner un metodo en el repoprod q no sea implementado de irepo?
+                    
                     
                 };
                 listProd.Add(produ);

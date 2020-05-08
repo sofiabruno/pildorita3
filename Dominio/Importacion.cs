@@ -24,7 +24,6 @@ namespace Dominio
         public int Cantidad { get; set; }
         [Required]
         public decimal PrecioUnitario { get; set; }
-        [Required]
-        public Cliente Cliente { get; set; }
+        
     }
 }

@@ -113,6 +113,7 @@ namespace Repositorios
             SqlConnection con = new SqlConnection(strCon);
 
             string sql = "select * from Productos;";
+            // corregir este select!
             SqlCommand cmd = new SqlCommand(sql, con);
 
             try
@@ -128,9 +129,8 @@ namespace Repositorios
                         Codigo = reader.GetString(1),
                         Nombre = reader.GetString(2),
                         Peso = reader.GetDecimal(3),
-                        //Cliente.Rut = reader.Get(4),
-                        RUT = reader.GetInt64(4),
-                        Stock = reader.GetInt32(5)
+                       // arreglar Cliente = cli
+                      
 
                     };
 

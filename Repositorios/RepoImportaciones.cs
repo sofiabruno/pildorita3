@@ -29,10 +29,7 @@ namespace Repositorios
             cmd.Parameters.AddWithValue("@ProdId", obj.Producto.Id);
             cmd.Parameters.AddWithValue("@cant", obj.Cantidad);
             cmd.Parameters.AddWithValue("@precio", obj.PrecioUnitario);
-            cmd.Parameters.AddWithValue("@cliId", obj.Cliente.Id);
-
-
-
+            
 
             try
             {
@@ -100,5 +97,69 @@ namespace Repositorios
         {
             throw new NotImplementedException();
         }
+
+        public List<Importacion> TraerImportacionesPorProd(int idProd)
+        {
+            List<Importacion> lista = new List<Importacion>();
+
+            SqlConnection con = new SqlConnection(strCon);
+
+            string sql = "select*from Importaciones, Productos where Importaciones.ProductoID = Productos.ProductoID and Productos.ProductoID=@id);";
+
+            SqlCommand cmd = new SqlCommand(sql, con);
+
+            cmd.Parameters.AddWithValue("@id", idProd);
+
+            try
+            {
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    Producto p = new Producto
+                    {
+                        //atencion  corregir cuando elimine la FK de la tablarranca en 7 si hay cliente dentro de import
+                        Id = reader.GetInt32(7),
+                        Codigo = reader.GetString(8),
+                        Nombre = reader.GetString(9),
+                        Peso = reader.GetDecimal(10),
+                        //RUT = reader.GetInt64(11),
+                        Cliente
+
+                    };
+                    
+                    Importacion import = new Importacion
+                    {
+                      Id = reader.GetInt32(0),
+                      FechaIngreso = reader.GetDateTime(1),
+                      SalidaPrevista = reader.GetDateTime(2),
+                      Producto = p,                      
+                      Cantidad = reader.GetInt32(4),
+                      PrecioUnitario = reader.GetDecimal(5)
+                     
+                    };
+
+                    lista.Add(import);
+                }
+
+                con.Close();
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open) con.Close();
+            }
+
+
+
+            return lista;
+
+        }
+
     }
 }
