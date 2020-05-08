@@ -20,7 +20,7 @@ namespace WcfServicioImportaciones
             RepoImportaciones repoImp = new RepoImportaciones();
 
             RepoProductos repoProd = new RepoProductos();
-            Producto prod = repoProd.BuscarPorId(importacion.IdProducto);
+            Producto prod = repoProd.BuscarPorCodigo(importacion.CodigoProd);
 
             Importacion import = new Importacion()
             {

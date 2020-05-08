@@ -40,43 +40,46 @@ namespace WebMVC.Controllers
         [HttpPost]
         public ActionResult Create(ViewModelImportacion importacion)
         {
-            ViewBag.idProd = importacion.IdProducto;
-
-            //convierto mis datos del cliente en DTOimportacion
-
-            DTOImportacion import = new DTOImportacion()
-            {
-                FechaIngreso= importacion.FechaIngreso,
-                SalidaPrevista = importacion.SalidaPrevista,
-                IdProducto = importacion.IdProducto,
-                Cantidad = importacion.Cantidad,
-                PrecioUnitario = importacion.PrecioUnitario                
-
-            };
-
-            //consumo mi servicio importaciones
-            ServicioImportacionClient proxy = new ServicioImportacionClient();
-                        
-            try
-            {
-                bool ret = proxy.AltaImportacion(import);
-
-                if (ret)
+            
+                //convierto mis datos del cliente en DTOimportacion
+                DTOImportacion import = new DTOImportacion()
                 {
-                    return Redirect("/Importacion/List");
-                }
-                else
-                {
-                    ViewBag.Mensaje = "Ha ocurrido un error al ingresar la importacion";
+                    FechaIngreso = importacion.FechaIngreso,
+                    SalidaPrevista = importacion.SalidaPrevista,
+                    CodigoProd = importacion.Codigo,
+                    Cantidad = importacion.Cantidad,
+                    PrecioUnitario = importacion.PrecioUnitario
 
-                    return View(importacion);
+                };
+
+                //consumo mi servicio importaciones
+                ServicioImportacionClient proxy = new ServicioImportacionClient();
+
+                try
+                {
+                    bool ret = proxy.AltaImportacion(import);
+
+                    if (ret)
+                    {
+                        proxy.Close();
+                        return Redirect("/Importacion/List");
+                    }
+                    else
+                    {
+                        ViewBag.Mensaje = "Ha ocurrido un error al ingresar la importacion";
+                        proxy.Close();
+                        return View(importacion);
+                    }
                 }
-            }
-            catch
-            {
-                return View();
-            }
-        }
+                catch
+                {
+                    proxy.Close();
+                    return View();
+                }
+            }        
+
+            
+  
 
         // GET: Importacion/Edit/5
         public ActionResult Edit(int id)

@@ -26,19 +26,13 @@ namespace WebMVC.ServicioImportaciones {
         private int CantidadField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodigoProdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime FechaIngresoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdProductoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal PrecioUnitarioField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long RutField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime SalidaPrevistaField;
@@ -67,6 +61,19 @@ namespace WebMVC.ServicioImportaciones {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CodigoProd {
+            get {
+                return this.CodigoProdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodigoProdField, value) != true)) {
+                    this.CodigoProdField = value;
+                    this.RaisePropertyChanged("CodigoProd");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime FechaIngreso {
             get {
                 return this.FechaIngresoField;
@@ -80,32 +87,6 @@ namespace WebMVC.ServicioImportaciones {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdProducto {
-            get {
-                return this.IdProductoField;
-            }
-            set {
-                if ((this.IdProductoField.Equals(value) != true)) {
-                    this.IdProductoField = value;
-                    this.RaisePropertyChanged("IdProducto");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal PrecioUnitario {
             get {
                 return this.PrecioUnitarioField;
@@ -114,19 +95,6 @@ namespace WebMVC.ServicioImportaciones {
                 if ((this.PrecioUnitarioField.Equals(value) != true)) {
                     this.PrecioUnitarioField = value;
                     this.RaisePropertyChanged("PrecioUnitario");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long Rut {
-            get {
-                return this.RutField;
-            }
-            set {
-                if ((this.RutField.Equals(value) != true)) {
-                    this.RutField = value;
-                    this.RaisePropertyChanged("Rut");
                 }
             }
         }

@@ -21,8 +21,8 @@ namespace WebMVC.ViewModels
        
         public DateTime SalidaPrevista { get; set; }
 
-       
-        public int IdProducto { get; set; }
+        [Display(Name = "Ingrese el código del producto a importar")]
+        public String Codigo { get; set; }
 
 
         [Required]

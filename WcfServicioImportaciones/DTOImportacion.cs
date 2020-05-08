@@ -17,7 +17,7 @@ namespace WcfServicioImportaciones
         public DateTime SalidaPrevista { get; set; }
 
         [DataMember]
-        public int IdProducto { get; set; }
+        public string CodigoProd { get; set; }
 
         [DataMember]
         public int Cantidad { get; set; }

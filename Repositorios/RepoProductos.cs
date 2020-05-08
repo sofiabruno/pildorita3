@@ -139,5 +139,62 @@ namespace Repositorios
 
             return productos;
         }
+
+
+        public Producto BuscarPorCodigo(string codigo)
+        {
+            Producto prod = null;
+
+            //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+            SqlConnection con = new SqlConnection(strCon);
+
+            string sql = "select * from productos p, clientes c where p.codigo = @cod and c.ClienteID = p.ClienteID";
+
+
+            SqlCommand cmd = new SqlCommand(sql, con);
+
+            cmd.Parameters.AddWithValue("@cod", codigo);
+
+            try
+            {
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    Cliente elcliente = new Cliente
+                    {
+                        Id = reader.GetInt32(4),
+                        Rut = reader.GetInt64(6),
+                        Nombre = reader.GetString(7),
+                        Antiguedad = reader.GetDateTime(8)
+
+                    };
+
+                    prod = new Producto
+                    {
+                        Id = reader.GetInt32(0),
+                        Codigo = reader.GetString(1),
+                        Nombre = reader.GetString(2),
+                        Peso = reader.GetDecimal(3),
+                        Cliente = elcliente
+
+
+                    };
+                }
+
+                con.Close();
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open) con.Close();
+            }
+
+            return prod;
+        }
     }
 }

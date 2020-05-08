@@ -3,11 +3,9 @@
   <xs:complexType name="DTOImportacion">
     <xs:sequence>
       <xs:element minOccurs="0" name="Cantidad" type="xs:int" />
+      <xs:element minOccurs="0" name="CodigoProd" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaIngreso" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="IdProducto" type="xs:int" />
       <xs:element minOccurs="0" name="PrecioUnitario" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Rut" type="xs:long" />
       <xs:element minOccurs="0" name="SalidaPrevista" type="xs:dateTime" />
     </xs:sequence>
   </xs:complexType>
