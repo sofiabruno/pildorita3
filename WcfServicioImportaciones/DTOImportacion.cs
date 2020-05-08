@@ -9,9 +9,7 @@ namespace WcfServicioImportaciones
     [DataContract]
     public class DTOImportacion
     {
-        [DataMember]
-        public int Id { get; set; }
-
+      
         [DataMember]
         public DateTime FechaIngreso { get; set; }
 
@@ -27,9 +25,6 @@ namespace WcfServicioImportaciones
         [DataMember]
         public decimal PrecioUnitario { get; set; }
 
-        [DataMember]
-        public long Rut { get; set; }
-
-
+       
     }
 }

@@ -18,10 +18,8 @@ namespace WcfServicioImportaciones
             bool ret = false;
 
             RepoImportaciones repoImp = new RepoImportaciones();
-            RepoProductos repoProd = new RepoProductos();
-            RepoClientes repoCli = new RepoClientes();
 
-            Cliente cli = repoCli.BuscarPorRut(importacion.Rut);
+            RepoProductos repoProd = new RepoProductos();
             Producto prod = repoProd.BuscarPorId(importacion.IdProducto);
 
             Importacion import = new Importacion()
@@ -30,6 +28,7 @@ namespace WcfServicioImportaciones
                 SalidaPrevista = importacion.SalidaPrevista,
                 Producto = prod,
                 Cantidad = importacion.Cantidad,
+                PrecioUnitario = importacion.PrecioUnitario
                 
 
             };
