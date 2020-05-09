@@ -150,6 +150,17 @@ namespace Repositorios
             RepoClientes repoCli = new RepoClientes();
             return repoCli.BuscarPorRut(rut);
         }
+
+        public static int CalcularAntig(Cliente cli)
+        {
+            RepoClientes repoCli = new RepoClientes();
+            return repoCli.CalcularAntiguedadEnAnios(cli);
+
+
+        }
+
+        
+
         #endregion
 
         #region Producto ----------------------------------------------------------------------------------
@@ -186,7 +197,62 @@ namespace Repositorios
             return repo.TraerTodos();
         }
 
-        #endregion
+        public static List<Importacion> TraerLasImpDeUnCliente(long rut)
+        {
+            RepoImportaciones repo = new RepoImportaciones();
 
+            return repo.TraerImportacionesPorCliente(rut);
+        }
+
+
+
+        public static double EstimarGanancia(Cliente cli)
+        {
+            int antiguedad = CalcularAntig(cli);
+            //porcentajes
+
+        //Porcentaje diario: 3 %
+        //Porcentaje de descuento por antigüedad: 5 %
+        //Antigüedad mínima para aplicar el descuento: 3 años
+
+            double porcDiario = 0.03;
+            double dtoAnti = 0.05;
+            int antigMin = 3;
+
+            double ganancia = 0;
+
+            List<Importacion> impsCliente = TraerLasImpDeUnCliente(cli.Rut);
+
+            DateTime fchHoy = DateTime.Today;
+
+            double monto = 0;
+
+            foreach (Importacion i in impsCliente)
+            {
+                //verifico que  ya haya entrado y que no se haya ido aun
+                //no las cuento en el calculo si ya salió de depostio o si aun no ingreso
+                if (i.FechaIngreso > fchHoy || i.SalidaPrevista < fchHoy)
+                {
+                    int dias = (i.SalidaPrevista - i.FechaIngreso).Days;
+                    monto += (i.Cantidad) * (i.PrecioUnitario) * (porcDiario) * dias;
+                   
+                }
+            }
+
+            double dto = 0;
+
+            if (CalcularAntig(cli)>= antigMin)
+            {
+                dto = monto * dtoAnti;
+
+            }
+
+            ganancia = monto - dto;
+
+            return ganancia;
+        }
+
+
+
+        #endregion
     }
-}
