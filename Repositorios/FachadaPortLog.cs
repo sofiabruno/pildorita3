@@ -17,7 +17,7 @@ namespace Repositorios
 
             Usuario existe = BuscarUsuarioPorId(ci);
 
-            if (existe == null) 
+            if (existe == null)
             {
                 if (Validaciones.ValidarCiUsuario(ci) && Validaciones.ValidarPassword(password))
                 {
@@ -31,7 +31,7 @@ namespace Repositorios
                     RepoUsuarios repoUsr = new RepoUsuarios();
                     ret = repoUsr.Alta(usr);
                 }
-            }           
+            }
 
             return ret;
         }
@@ -159,7 +159,7 @@ namespace Repositorios
 
         }
 
-        
+
 
         #endregion
 
@@ -172,7 +172,7 @@ namespace Repositorios
             return repoProds.TraerTodos();
         }
 
-        
+
         public static Producto BuscarProductoPorId(int id)
         {
             RepoProductos repoProds = new RepoProductos();
@@ -211,9 +211,9 @@ namespace Repositorios
             int antiguedad = CalcularAntig(cli);
             //porcentajes
 
-        //Porcentaje diario: 3 %
-        //Porcentaje de descuento por antigüedad: 5 %
-        //Antigüedad mínima para aplicar el descuento: 3 años
+            //Porcentaje diario: 3 %
+            //Porcentaje de descuento por antigüedad: 5 %
+            //Antigüedad mínima para aplicar el descuento: 3 años
 
             double porcDiario = 0.03;
             double dtoAnti = 0.05;
@@ -235,13 +235,13 @@ namespace Repositorios
                 {
                     int dias = (i.SalidaPrevista - i.FechaIngreso).Days;
                     monto += (i.Cantidad) * (i.PrecioUnitario) * (porcDiario) * dias;
-                   
+
                 }
             }
 
             double dto = 0;
 
-            if (CalcularAntig(cli)>= antigMin)
+            if (CalcularAntig(cli) >= antigMin)
             {
                 dto = monto * dtoAnti;
 
@@ -252,7 +252,9 @@ namespace Repositorios
             return ganancia;
         }
 
+    }
+}
 
 
         #endregion
-    }
+    
