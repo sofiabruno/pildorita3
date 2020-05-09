@@ -232,7 +232,7 @@ namespace Repositorios
                 //no las cuento en el calculo si ya salió de depostio o si aun no ingreso
                 if (i.FechaIngreso < fchHoy && i.SalidaPrevista > fchHoy)
                 {
-                    int dias = (i.SalidaPrevista - i.FechaIngreso).Days;
+                    int dias = i.SalidaPrevista.DayOfYear - i.FechaIngreso.DayOfYear +1;
                     monto += (i.Cantidad) * (i.PrecioUnitario) * (porcDiario) * dias;
 
                 }
