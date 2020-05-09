@@ -147,6 +147,7 @@ namespace Repositorios
                     };
 
                     lista.Add(import);
+                    lista.Sort();
                 }
 
                 con.Close();
@@ -159,8 +160,6 @@ namespace Repositorios
             {
                 if (con.State == ConnectionState.Open) con.Close();
             }
-
-
 
             return lista;
         }
@@ -325,8 +324,6 @@ namespace Repositorios
             return stock;
 
 
-
         }
-
     }
 }

@@ -23,7 +23,7 @@ namespace WcfServicioImportaciones
         public int Cantidad { get; set; }
 
         [DataMember]
-        public decimal PrecioUnitario { get; set; }
+        public int PrecioUnitario { get; set; }
 
        
     }

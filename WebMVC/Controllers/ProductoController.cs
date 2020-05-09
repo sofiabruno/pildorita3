@@ -132,7 +132,7 @@ namespace WebMVC.Controllers
                 };
 
                 lista.Add(vm);
-
+                lista.Sort();
 
             }              
         

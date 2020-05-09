@@ -7,7 +7,7 @@ using Dominio;
 
 namespace WebMVC.ViewModels
 {
-    public class ViewModelProducto
+    public class ViewModelProducto : IComparable<ViewModelProducto>
     {
         [Display(Name = "Código del producto")]
         public string Codigo { get; set; }
@@ -17,6 +17,13 @@ namespace WebMVC.ViewModels
 
        
         public int Stock { get; set; }
+
+
+
+        public int CompareTo(ViewModelProducto other)
+        {
+            return Stock.CompareTo(other.Stock) * (-1);
+        }
 
     }
 }

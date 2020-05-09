@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dominio
 {
-    public class Importacion
+    public class Importacion : IComparable<Importacion>
     {
         public int Id { get; set; }
         [Required]
@@ -23,7 +23,18 @@ namespace Dominio
         [Required]
         public int Cantidad { get; set; }
         [Required]
+        [Display(Name = "Precio Unitario")]
         public int PrecioUnitario { get; set; }
-        
+
+
+
+
+        public int CompareTo(Importacion other)
+        {
+            return FechaIngreso.CompareTo(other.FechaIngreso) * (1);
+        }
+
+
+
     }
 }
