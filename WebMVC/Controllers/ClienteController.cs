@@ -73,7 +73,7 @@ namespace WebMVC.Controllers
             if (Session["rol"] == null)
                 return Redirect("/Home/Index");
 
-            if (Session["rol"].ToString() != "deposito")
+            if (Session["rol"].ToString() != "admin")
                 return Redirect("/Home/Index");
 
             Cliente cliente = FachadaPortLog.BuscarClientePorId(id);
@@ -103,7 +103,7 @@ namespace WebMVC.Controllers
             if (Session["rol"] == null)
                 return Redirect("/Home/Index");
 
-            if (Session["rol"].ToString() != "deposito")
+            if (Session["rol"].ToString() != "admin")
                 return Redirect("/Home/Index");
 
             Cliente cliente = FachadaPortLog.BuscarClientePorId(id);
@@ -134,10 +134,37 @@ namespace WebMVC.Controllers
             if (Session["rol"] == null)
                 return Redirect("/Home/Index");
 
-            if (Session["rol"].ToString() != "deposito")
+            if (Session["rol"].ToString() != "admin")
                 return Redirect("/Home/Index");
 
             return View(FachadaPortLog.TraerTodosLosClientes());
+        }
+
+
+        //Ganancia estimada
+
+        // GET: Cliente/Ganancia
+        public ActionResult Ganancia(long rut)
+        {
+            if (Session["rol"] == null)
+                return Redirect("/Home/Index");
+
+            if (Session["rol"].ToString() != "admin")
+                return Redirect("/Home/Index");
+
+            Cliente cliente = FachadaPortLog.BuscarClientePorRut(rut);
+
+            return View(cliente);
+        }
+
+        // POST: Cliente/Ganancia
+        [HttpPost]
+        public ActionResult Ganancia()
+        {
+          
+
+                return View();
+            
         }
 
 

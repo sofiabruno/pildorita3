@@ -42,21 +42,24 @@
                                 </ul>
                             </li>
                             <li>@Html.ActionLink("Productos", "List", "Producto")</li>
-                        }
-
-                        if (Session["rol"].ToString() == "deposito")
-                        {
-                            // Deposito
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clientes<b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li>@Html.ActionLink("Create", "Create", "Cliente")</li>
                                     <li>@Html.ActionLink("List", "List", "Cliente")</li>
 
+
                                 </ul>
                             </li>
-                            <li>@Html.ActionLink("Importaciones", "List", "Importacion")</li>
+                        }
+
+                        if (Session["rol"].ToString() == "deposito")
+                        {
+                            // Deposito
+
                             <li>@Html.ActionLink("Productos", "List", "Producto")</li>
+                            <li>@Html.ActionLink("Importaciones", "List", "Importacion")</li>
+                            
                         }
 
 

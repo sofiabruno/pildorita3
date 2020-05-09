@@ -7,9 +7,10 @@
 
 <h2>Clientes</h2>
 
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
+<br />
 <table class="table">
     <tr>
         <th>
@@ -36,15 +37,17 @@
             @Html.DisplayFor(modelItem => item.Antiguedad)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+            @Html.ActionLink("Estimar ganancia", "Ganancia", new { rut = item.Rut })
+
         </td>
     </tr>
 }
 
 </table>
 
-<div>
+@*<div>
     @Html.ActionLink("Back", "Index", "Home")
-</div>
+</div>*@

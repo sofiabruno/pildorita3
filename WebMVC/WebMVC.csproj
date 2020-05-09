@@ -238,6 +238,7 @@
     <Content Include="Views\Cliente\Delete.cshtml" />
     <Content Include="Views\Importacion\List.cshtml" />
     <Content Include="Views\Importacion\Create.cshtml" />
+    <Content Include="Views\Cliente\Ganancia.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
