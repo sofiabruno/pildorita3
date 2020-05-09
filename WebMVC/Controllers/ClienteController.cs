@@ -154,6 +154,8 @@ namespace WebMVC.Controllers
 
             Cliente cliente = FachadaPortLog.BuscarClientePorRut(rut);
 
+            
+
             double ganancia = FachadaPortLog.EstimarGanancia(cliente);
 
             ViewBag.Ganancia = ganancia;

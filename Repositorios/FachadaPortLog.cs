@@ -155,8 +155,7 @@ namespace Repositorios
         {
             RepoClientes repoCli = new RepoClientes();
             return repoCli.CalcularAntiguedadEnAnios(cli);
-
-
+            
         }
 
 
@@ -231,7 +230,7 @@ namespace Repositorios
             {
                 //verifico que  ya haya entrado y que no se haya ido aun
                 //no las cuento en el calculo si ya salió de depostio o si aun no ingreso
-                if (i.FechaIngreso > fchHoy || i.SalidaPrevista < fchHoy)
+                if (i.FechaIngreso < fchHoy && i.SalidaPrevista > fchHoy)
                 {
                     int dias = (i.SalidaPrevista - i.FechaIngreso).Days;
                     monto += (i.Cantidad) * (i.PrecioUnitario) * (porcDiario) * dias;
