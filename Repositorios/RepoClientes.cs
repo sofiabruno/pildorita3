@@ -241,5 +241,16 @@ namespace Repositorios
 
             return cli;
         }
+
+        public int CalcularAntiguedadEnAnios(Cliente cli)
+        {
+            int anti = 0;
+            anti = DateTime.Now.Year - cli.Antiguedad.Year;
+            if (DateTime.Now.DayOfYear < cli.Antiguedad.DayOfYear)
+                anti = anti - 1;
+
+            return anti;
+
+        }
     }
 }
