@@ -168,6 +168,12 @@ namespace Repositorios
             return repoProds.BuscarPorId(id);
         }
 
+        public static Producto BuscarProductoPorCod(string codigo)
+        {
+            RepoProductos repoProds = new RepoProductos();
+            return repoProds.BuscarPorCodigo(codigo);
+        }
+
 
         #endregion
 

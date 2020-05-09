@@ -25,13 +25,24 @@ namespace WebMVC.Controllers
         }
 
         // GET: Importacion/Create
-        public ActionResult Create()
+        public ActionResult Create(string codProd)
         {
             if (Session["rol"] == null)
                 return Redirect("/Home/Index");
 
             if (Session["rol"].ToString() == "admin")
                 return Redirect("/Home/Index");
+
+            //info del producto
+            Producto prod = FachadaPortLog.BuscarProductoPorCod(codProd);
+
+            ViewBag.codigo = prod.Codigo;
+            ViewBag.nombre = prod.Nombre;
+            ViewBag.peso = prod.Peso;
+            ViewBag.rut = prod.Cliente.Rut;
+
+
+
 
             ViewModelImportacion vmImport = new ViewModelImportacion();
             vmImport.Productos = FachadaPortLog.TraerTodosLosProductos();
