@@ -11,7 +11,9 @@ namespace Repositorios
 {
     public class RepoImportaciones : IRepositorio<Importacion>
     {
-        string strCon = "Data Source=(local)\\SQLEXPRESS; Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+        //string strCon = "Data Source=(local)\\SQLEXPRESS; Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+        string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+
 
 
         public bool Alta(Importacion obj)
@@ -140,7 +142,7 @@ namespace Repositorios
                         SalidaPrevista = reader.GetDateTime(2),
                         Producto = p,
                         Cantidad = reader.GetInt32(4),
-                        PrecioUnitario = reader.GetDecimal(5)
+                        PrecioUnitario = reader.GetInt32(5)
 
                     };
 
@@ -208,7 +210,7 @@ namespace Repositorios
                       SalidaPrevista = reader.GetDateTime(2),
                       Producto = p,                      
                       Cantidad = reader.GetInt32(4),
-                      PrecioUnitario = reader.GetDecimal(5)
+                      PrecioUnitario = reader.GetInt32(5)
                      
                     };
 
@@ -277,7 +279,7 @@ namespace Repositorios
                         SalidaPrevista = reader.GetDateTime(2),
                         Producto = p,
                         Cantidad = reader.GetInt32(4),
-                        PrecioUnitario = reader.GetDecimal(5)
+                        PrecioUnitario = reader.GetInt32(5)
 
                     };
 

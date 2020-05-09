@@ -33,7 +33,10 @@ namespace WebMVC.Controllers
             if (Session["rol"].ToString() == "admin")
                 return Redirect("/Home/Index");
 
-            return View();
+            ViewModelImportacion vmImport = new ViewModelImportacion();
+            vmImport.Productos = FachadaPortLog.TraerTodosLosProductos();
+
+            return View(vmImport);
         }
 
         // POST: Importacion/Create

@@ -23,7 +23,7 @@ namespace Dominio
         [Required]
         public int Cantidad { get; set; }
         [Required]
-        public decimal PrecioUnitario { get; set; }
+        public int PrecioUnitario { get; set; }
         
     }
 }

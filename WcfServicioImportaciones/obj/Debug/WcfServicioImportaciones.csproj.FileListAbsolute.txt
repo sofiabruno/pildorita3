@@ -10,3 +10,15 @@ C:\Users\Sofia\Documents\GitHub\pildorita3\WcfServicioImportaciones\obj\Debug\Wc
 C:\Users\Sofia\Documents\GitHub\pildorita3\WcfServicioImportaciones\obj\Debug\WcfServicioImportaciones.csproj.CopyComplete
 C:\Users\Sofia\Documents\GitHub\pildorita3\WcfServicioImportaciones\obj\Debug\WcfServicioImportaciones.dll
 C:\Users\Sofia\Documents\GitHub\pildorita3\WcfServicioImportaciones\obj\Debug\WcfServicioImportaciones.pdb
+C:\Users\Fede\source\repos\pildorita3\WcfServicioImportaciones\bin\WcfServicioImportaciones.dll.config
+C:\Users\Fede\source\repos\pildorita3\WcfServicioImportaciones\bin\WcfServicioImportaciones.dll
+C:\Users\Fede\source\repos\pildorita3\WcfServicioImportaciones\bin\WcfServicioImportaciones.pdb
+C:\Users\Fede\source\repos\pildorita3\WcfServicioImportaciones\bin\Dominio.dll
+C:\Users\Fede\source\repos\pildorita3\WcfServicioImportaciones\bin\Repositorios.dll
+C:\Users\Fede\source\repos\pildorita3\WcfServicioImportaciones\bin\Dominio.pdb
+C:\Users\Fede\source\repos\pildorita3\WcfServicioImportaciones\bin\Repositorios.pdb
+C:\Users\Fede\source\repos\pildorita3\WcfServicioImportaciones\obj\Debug\WcfServicioImportaciones.csprojAssemblyReference.cache
+C:\Users\Fede\source\repos\pildorita3\WcfServicioImportaciones\obj\Debug\WcfServicioImportaciones.csproj.CoreCompileInputs.cache
+C:\Users\Fede\source\repos\pildorita3\WcfServicioImportaciones\obj\Debug\WcfServicioImportaciones.csproj.CopyComplete
+C:\Users\Fede\source\repos\pildorita3\WcfServicioImportaciones\obj\Debug\WcfServicioImportaciones.dll
+C:\Users\Fede\source\repos\pildorita3\WcfServicioImportaciones\obj\Debug\WcfServicioImportaciones.pdb
