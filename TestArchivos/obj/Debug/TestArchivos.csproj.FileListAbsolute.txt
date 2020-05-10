@@ -1,0 +1,10 @@
+C:\Users\Fede\source\repos\pildorita3\TestArchivos\bin\Debug\TestArchivos.exe.config
+C:\Users\Fede\source\repos\pildorita3\TestArchivos\bin\Debug\TestArchivos.exe
+C:\Users\Fede\source\repos\pildorita3\TestArchivos\bin\Debug\TestArchivos.pdb
+C:\Users\Fede\source\repos\pildorita3\TestArchivos\bin\Debug\UtilidadesArchivos.dll
+C:\Users\Fede\source\repos\pildorita3\TestArchivos\bin\Debug\UtilidadesArchivos.pdb
+C:\Users\Fede\source\repos\pildorita3\TestArchivos\obj\Debug\TestArchivos.csprojAssemblyReference.cache
+C:\Users\Fede\source\repos\pildorita3\TestArchivos\obj\Debug\TestArchivos.csproj.CoreCompileInputs.cache
+C:\Users\Fede\source\repos\pildorita3\TestArchivos\obj\Debug\TestArchivos.csproj.CopyComplete
+C:\Users\Fede\source\repos\pildorita3\TestArchivos\obj\Debug\TestArchivos.exe
+C:\Users\Fede\source\repos\pildorita3\TestArchivos\obj\Debug\TestArchivos.pdb

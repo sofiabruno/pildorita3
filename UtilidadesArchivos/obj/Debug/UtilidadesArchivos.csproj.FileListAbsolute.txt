@@ -1,0 +1,6 @@
+C:\Users\Fede\source\repos\pildorita3\UtilidadesArchivos\bin\Debug\UtilidadesArchivos.dll
+C:\Users\Fede\source\repos\pildorita3\UtilidadesArchivos\bin\Debug\UtilidadesArchivos.pdb
+C:\Users\Fede\source\repos\pildorita3\UtilidadesArchivos\obj\Debug\UtilidadesArchivos.csprojAssemblyReference.cache
+C:\Users\Fede\source\repos\pildorita3\UtilidadesArchivos\obj\Debug\UtilidadesArchivos.csproj.CoreCompileInputs.cache
+C:\Users\Fede\source\repos\pildorita3\UtilidadesArchivos\obj\Debug\UtilidadesArchivos.dll
+C:\Users\Fede\source\repos\pildorita3\UtilidadesArchivos\obj\Debug\UtilidadesArchivos.pdb
