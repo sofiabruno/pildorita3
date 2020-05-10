@@ -8,7 +8,7 @@
 <h2>Importaciones</h2>
 <br />
 
-<table class="table">
+<table class="table table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.FechaIngreso)
@@ -25,7 +25,6 @@
         <th>
             @Html.DisplayNameFor(model => model.PrecioUnitario)
         </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -50,3 +49,7 @@
 }
 
 </table>
+
+<div>
+    @Html.ActionLink("Back", "Index", "Home")
+</div>

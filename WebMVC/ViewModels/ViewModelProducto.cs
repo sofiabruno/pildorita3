@@ -22,7 +22,7 @@ namespace WebMVC.ViewModels
 
         public int CompareTo(ViewModelProducto other)
         {
-            return Stock.CompareTo(other.Stock) * (-1);
+            return Codigo.CompareTo(other.Codigo) * (1);
         }
 
     }

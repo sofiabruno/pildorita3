@@ -23,7 +23,7 @@ namespace WebMVC.Controllers
             if (Session["rol"] == null)
                 return Redirect("/Home/Index");
 
-            if (Session["rol"].ToString() != "deposito")
+            if (Session["rol"].ToString() != "admin")
                 return Redirect("/Home/Index");
 
             Cliente cliente = FachadaPortLog.BuscarClientePorId(id);
@@ -37,7 +37,7 @@ namespace WebMVC.Controllers
             if (Session["rol"] == null)
                 return Redirect("/Home/Index");
 
-            if (Session["rol"].ToString() != "deposito")
+            if (Session["rol"].ToString() != "admin")
                 return Redirect("/Home/Index");
 
             return View();
@@ -54,10 +54,9 @@ namespace WebMVC.Controllers
                 if (ret)
                 {
                     ViewBag.Mensaje = "El cliente se ha ingresado con exito";
-                    // Como mostrar este mensaje al usuario unos segundos?
                 }
 
-                return Redirect("/Home/Index");
+                return Redirect("/Cliente/List");
             }
             catch
             {

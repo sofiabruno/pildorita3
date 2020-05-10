@@ -31,7 +31,7 @@ namespace Dominio
 
         public int CompareTo(Importacion other)
         {
-            return FechaIngreso.CompareTo(other.FechaIngreso) * (1);
+            return Producto.Codigo.CompareTo(other.Producto.Codigo) * (1);
         }
 
 
