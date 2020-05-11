@@ -142,7 +142,6 @@ namespace Repositorios
             return productos;
         }
 
-
         public Producto BuscarPorCodigo(string codigo)
         {
             Producto prod = null;
