@@ -3,42 +3,106 @@
 }
 
 
-<div class="jumbotron" style="background-image: url(/Imagenes/fondoplog.jpg)">   
-    <h1 style="color: #FFFFFF">PortLog</h1>
-    <p class="lead" style="color: #F0F0F0">
-        Somos una empresa uruguaya líder en soluciones logísticas que brinda a sus clientes el almacenaje y
-        soporte a los procesos de exportación e importación de diversos productos.
-    </p>
-    <p class="lead" style="color: #F0F0F0">
-        PortLog es desarrollado y administrado por especialistas de la industria con décadas de conocimiento acumulado
-        y una verdadera pasión por ofrecer soluciones digitales.
-    </p>
-    <p><a href="#" class="btn btn-primary btn-lg">Leer más &raquo;</a></p>
-</div>
 
-<div class="row">
-    <div style="background-image: url(/Imagenes/bannerceleste.jpg)">
-        <h2 class="text-center" style="color: white">Beneficios</h2>
-    </div>
-    <div class="col-md-4 text-center">
-        <h3>Optimización del inventario</h3>
-        <p>
-            Reducción del inventario nacional total en cada país. Reducción del inventario total de la región.
+@if (Session["rol"] == null)
+{
+
+    <div class="jumbotron" style="background-image: url(/Imagenes/fondoplog.jpg)">
+        @*<h1 style="color: #FFFFFF">PortLog</h1>*@
+        <img src="~/Imagenes/logoplog.png" alt="LogoEmpresa" />
+        <br />
+        <br />
+        <p class="lead" style="color: #F0F0F0; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            Somos una empresa uruguaya líder en soluciones logísticas que brinda a sus clientes el almacenaje y
+            soporte a los procesos de exportación e importación de diversos productos.
         </p>
-        <p><a class="btn btn-default" href="#">Leer más &raquo;</a></p>
-    </div>
-    <div class="col-md-4 text-center">
-        <h3>Reducción de Costos</h3>
-        <p>
-            Clientes con más de 3 años de antiguedad se benefician con un 5% de descuento
+        <p class="lead" style="color: #F0F0F0; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            PortLog es desarrollado y administrado por especialistas de la industria con décadas de conocimiento acumulado
+            y una verdadera pasión por ofrecer soluciones digitales.
         </p>
-        <p><a class="btn btn-default" href="#">Leer más &raquo;</a></p>
+        <p><a href="#" class="btn btn-primary btn-lg">Leer más &raquo;</a></p>
     </div>
-    <div class="col-md-4 text-center">
-        <h3>Mejora del servicio</h3>
-        <p>
-            Reduce los plazos de entrega. Capacidad de capturar otros segmentos del mercado.
-        </p>
-        <p><a class="btn btn-default" href="#">Leer más &raquo;</a></p>
+
+    <div class="row">
+        <div style="background-image: url(/Imagenes/bannerceleste.jpg)">
+            <h2 class="text-center" style="color: white">Beneficios</h2>
+        </div>
+        <div class="col-md-4 text-center">
+            <h3>Optimización del inventario</h3>
+            <p>
+                Reducción del inventario nacional total en cada país. Reducción del inventario total de la región.
+            </p>
+            <p><a class="btn btn-default" href="#">Leer más &raquo;</a></p>
+        </div>
+        <div class="col-md-4 text-center">
+            <h3>Reducción de Costos</h3>
+            <p>
+                Clientes con más de 3 años de antiguedad se benefician con un 5% de descuento
+            </p>
+            <p><a class="btn btn-default" href="#">Leer más &raquo;</a></p>
+        </div>
+        <div class="col-md-4 text-center">
+            <h3>Mejora del servicio</h3>
+            <p>
+                Reduce los plazos de entrega. Capacidad de capturar otros segmentos del mercado.
+            </p>
+            <p><a class="btn btn-default" href="#">Leer más &raquo;</a></p>
+        </div>
     </div>
-</div>
+
+}
+else if (Session["rol"].ToString() == "admin")
+{
+    <div class="row">
+        <div class="col-xs-6" style="text-align: left; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; padding: 14px 20px; color: #004761">
+            <h4>@DateTime.Now.ToLongDateString()</h4>
+        </div>
+        <div class="col-xs-6" style="text-align: right; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; padding: 0 20px; color: #004761">
+            <h3>ADMIN</h3>
+        </div>
+        <div class="col-md-12">
+            <hr />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4">
+
+        </div>
+        <div class="col-xs-4 text-center" style="height: 180px; margin:180px 0">
+            <img src="~/Imagenes/logoplog.png" alt="Logo PortLog" />
+        </div>
+        <div class="col-xs-4">
+
+        </div>
+    </div>
+
+
+
+}
+else
+{
+    <div class="row">
+        <div class="col-md-6" style="text-align: left; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; padding: 14px 20px; color: #004761">
+            <h4>@DateTime.Now.ToLongDateString()</h4>
+        </div>
+        <div class="col-md-6" style="text-align: right; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; padding: 0 20px; color: #004761">
+            <h3>DEPOSITO</h3>
+        </div>
+        <div class="col-md-12">
+            <hr />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4">
+
+        </div>
+        <div class="col-xs-4 text-center" style="height: 180px; margin:180px 0">
+            <img src="~/Imagenes/logoplog.png" alt="Logo PortLog" />
+        </div>
+        <div class="col-xs-4">
+
+        </div>
+    </div>
+}
