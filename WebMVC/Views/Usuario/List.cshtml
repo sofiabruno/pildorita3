@@ -8,7 +8,7 @@
 <h2>Usuarios</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Dar de alta a un nuevo usuario", "Create")
 </p>
 <table class="table table-hover">
     <tr>
@@ -36,9 +36,9 @@
             @Html.DisplayFor(modelItem => item.Rol)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { ci=item.Ci }) |
-            @Html.ActionLink("Details", "Details", new { ci = item.Ci }) |
-            @Html.ActionLink("Delete", "Delete", new { ci = item.Ci })
+            @Html.ActionLink("Editar", "Edit", new { ci=item.Ci }) |
+            @Html.ActionLink("Detalles", "Details", new { ci = item.Ci }) |
+            @Html.ActionLink("Borrar", "Delete", new { ci = item.Ci })
         </td>
     </tr>
 }
@@ -46,5 +46,5 @@
 </table>
 
 <div>
-    @Html.ActionLink("Back", "Index", "Home")
+    @Html.ActionLink("Inicio", "Index", "Home")
 </div>
