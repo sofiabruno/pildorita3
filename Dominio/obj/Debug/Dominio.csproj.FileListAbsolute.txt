@@ -9,3 +9,4 @@ C:\Users\Sofia\Documents\GitHub\pildorita3\Dominio\obj\Debug\Dominio.csproj.Core
 C:\Users\Sofia\Documents\GitHub\pildorita3\Dominio\obj\Debug\Dominio.dll
 C:\Users\Sofia\Documents\GitHub\pildorita3\Dominio\obj\Debug\Dominio.pdb
 C:\Users\Fede\source\repos\pildorita3\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Users\Sofia\Documents\GitHub\pildorita3\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache

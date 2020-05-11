@@ -211,9 +211,11 @@ namespace Repositorios
             //Porcentaje de descuento por antigüedad: 5 %
             //Antigüedad mínima para aplicar el descuento: 3 años
 
-            double porcDiario = 0.03;
-            double dtoAnti = 0.05;
-            int antigMin = 3;
+            Parametro lista = TraerLosParametros();
+
+            double porcDiario = lista.porcDiario;
+            double dtoAnti = lista.dtoAnti;
+            int antigMin = lista.antigMin;
 
             double ganancia = 0;
 
@@ -246,6 +248,13 @@ namespace Repositorios
             ganancia = monto - dto;
 
             return ganancia;
+        }
+
+        public static Parametro TraerLosParametros()
+        {
+            RepoParametros repo = new RepoParametros();
+
+            return repo.Traer();
         }
 
     }
