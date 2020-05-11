@@ -47,7 +47,7 @@ namespace WebMVC.Controllers
             }
             else
             {
-                return RedirectToAction("Login", new { mensaje = "El usuario no existe" });
+                return RedirectToAction("Login", new { mensaje = "El usuario no está ingresado en el sistema" });
             }
         }
 

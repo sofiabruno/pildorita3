@@ -82,8 +82,6 @@ namespace Repositorios
             return ret;
         }
 
-
-
         public bool Modificacion(Cliente obj)
         {
             bool ret = false;

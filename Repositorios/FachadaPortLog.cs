@@ -171,7 +171,6 @@ namespace Repositorios
             return repoProds.TraerTodos();
         }
 
-
         public static Producto BuscarProductoPorId(int id)
         {
             RepoProductos repoProds = new RepoProductos();
@@ -202,8 +201,6 @@ namespace Repositorios
 
             return repo.TraerImportacionesPorCliente(rut);
         }
-
-
 
         public static double EstimarGanancia(Cliente cli)
         {
