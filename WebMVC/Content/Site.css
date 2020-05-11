@@ -22,3 +22,10 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.ganancia h1{
+    font-size: 36px;
+    border: solid red;
+    display: inline;
+    padding: 20px;
+}
