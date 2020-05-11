@@ -17,23 +17,17 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        @*<div class="form-group">
-                @Html.LabelFor(model => model.Codigo, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Codigo, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Codigo, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
-
-
         <div class="form-group hidden">
-            @Html.LabelFor(model => model.Productos, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.Codigo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.Codigo, new SelectList(Model.Productos, "Codigo", "Codigo"), "Seleccione", new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Codigo, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                @Html.EditorFor(model => model.Codigo, new { htmlAttributes = new { @class = "form-control" , @Value = ViewBag.codigo } })
+                @Html.ValidationMessageFor(model => model.Codigo, "", new { @class = "text-danger" })                     
 
+            </div>
+         </div>
+
+
+  
         @*<div>
                 <h4>Información del producto a importar:</h4>
                 <p><strong>Código: </strong>@ViewBag.codigo</p>
@@ -41,7 +35,7 @@
                 <p><strong>Peso(g): </strong>@ViewBag.peso</p>
                 <p><strong>RUT del cliente: </strong>@ViewBag.rut</p>
 
-            </div>*@
+         </div>*@
 
 
 
@@ -94,6 +88,11 @@
                 @Html.ValidationMessageFor(model => model.SalidaPrevista, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        @if (ViewBag.MensajeDeErrorEnFechas != null)
+        {
+            <p>@ViewBag.MensajeDeErrorEnFechas</p>
+        }
 
         <div class="form-group">
             @Html.LabelFor(model => model.Cantidad, htmlAttributes: new { @class = "control-label col-md-2" })

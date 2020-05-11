@@ -40,21 +40,19 @@ namespace WebMVC.Controllers
             ViewBag.nombre = prod.Nombre;
             ViewBag.peso = prod.Peso;
             ViewBag.rut = prod.Cliente.Rut;
-
-
-
-
-            ViewModelImportacion vmImport = new ViewModelImportacion();
-            vmImport.Productos = FachadaPortLog.TraerTodosLosProductos();
-
-            return View(vmImport);
+       
+            
+            return View();
         }
 
         // POST: Importacion/Create
         [HttpPost]
         public ActionResult Create(ViewModelImportacion importacion)
         {
-            
+
+            //Verificar la fecha de salida
+            if (importacion.SalidaPrevista > importacion.FechaIngreso)
+            {
                 //convierto mis datos del cliente en DTOimportacion
                 DTOImportacion import = new DTOImportacion()
                 {
@@ -90,6 +88,22 @@ namespace WebMVC.Controllers
                     proxy.Close();
                     return View();
                 }
+            }
+            else
+            {
+                Producto prod = FachadaPortLog.BuscarProductoPorCod(importacion.Codigo);
+
+                ViewBag.codigo = prod.Codigo;
+                ViewBag.nombre = prod.Nombre;
+                ViewBag.peso = prod.Peso;
+                ViewBag.rut = prod.Cliente.Rut;
+
+
+                ViewBag.MensajeDeErrorEnFechas = "La fecha de salida no puede ser anterior a la de ingreso";
+                return View(importacion);
+            }
+            
+                
             }        
 
             
