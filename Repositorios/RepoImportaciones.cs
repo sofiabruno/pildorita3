@@ -11,8 +11,8 @@ namespace Repositorios
 {
     public class RepoImportaciones : IRepositorio<Importacion>
     {
-        string strCon = "Data Source=(local)\\SQLEXPRESS; Initial Catalog=BasePortLog; Integrated Security=SSPI;";
-        //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+        //string strCon = "Data Source=(local)\\SQLEXPRESS; Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+        string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
 
 
 

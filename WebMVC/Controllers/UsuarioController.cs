@@ -192,6 +192,9 @@ namespace WebMVC.Controllers
             if (Session["rol"] == null)
                 return Redirect("/Home/Index");
 
+            if (Session["rol"].ToString() != "admin")
+                return Redirect("/Home/Index");
+
             ArchivoDelimitado.GuardarUsuariosArchivo("#", "ArchivosTexto", "DatosUsuarios.txt");
             ArchivoDelimitado.GuardarClientesArchivo("#", "ArchivosTexto", "DatosClientes.txt");
             ArchivoDelimitado.GuardarProductosArchivo("#", "ArchivosTexto", "DatosProductos.txt");

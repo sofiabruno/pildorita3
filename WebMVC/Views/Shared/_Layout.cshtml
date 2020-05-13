@@ -26,7 +26,6 @@
                     @if (Session["rol"] != null)
                     {
 
-                        <li>@Html.ActionLink("Generar archivos", "GenerarTxt", "Usuario")</li>
                         @*<li>@Html.ActionLink("Inicio", "Index", "Home")</li>*@
                         @*<li>@Html.ActionLink("Acerca de", "About", "Home")</li>*@
                         @*<li>@Html.ActionLink("Contacto", "Contact", "Home")</li>*@
@@ -34,6 +33,7 @@
                         if (Session["rol"].ToString() == "admin")
                         {
                             // Admin
+                            <li>@Html.ActionLink("Generar archivos", "GenerarTxt", "Usuario")</li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuarios<b class="caret"></b></a>
                                 <ul class="dropdown-menu">
