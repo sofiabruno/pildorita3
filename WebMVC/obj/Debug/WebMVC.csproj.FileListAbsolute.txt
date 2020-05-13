@@ -172,3 +172,5 @@ C:\Users\Sofia\Documents\GitHub\pildorita3\WebMVC\obj\Debug\WebMVC.csproj.CopyCo
 C:\Users\Sofia\Documents\GitHub\pildorita3\WebMVC\obj\Debug\WebMVC.dll
 C:\Users\Sofia\Documents\GitHub\pildorita3\WebMVC\obj\Debug\WebMVC.pdb
 C:\Users\Sofia\Documents\GitHub\pildorita3\WebMVC\obj\Debug\WebMVC.csprojAssemblyReference.cache
+C:\Users\Fede\source\repos\pildorita3\WebMVC\bin\UtilidadesArchivos.dll
+C:\Users\Fede\source\repos\pildorita3\WebMVC\bin\UtilidadesArchivos.pdb

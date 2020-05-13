@@ -26,6 +26,7 @@
                     @if (Session["rol"] != null)
                     {
 
+                        <li>@Html.ActionLink("Generar archivos", "GenerarTxt", "Usuario")</li>
                         @*<li>@Html.ActionLink("Inicio", "Index", "Home")</li>*@
                         @*<li>@Html.ActionLink("Acerca de", "About", "Home")</li>*@
                         @*<li>@Html.ActionLink("Contacto", "Contact", "Home")</li>*@
@@ -59,7 +60,7 @@
 
                             <li>@Html.ActionLink("Productos", "List", "Producto")</li>
                             <li>@Html.ActionLink("Importaciones", "List", "Importacion")</li>
-                            
+
                         }
 
 

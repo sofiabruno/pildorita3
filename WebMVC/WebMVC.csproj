@@ -242,6 +242,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ArchivosTexto\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -265,6 +266,10 @@
     <ProjectReference Include="..\Repositorios\Repositorios.csproj">
       <Project>{82f00326-bf75-4ada-89c1-10940451ba6b}</Project>
       <Name>Repositorios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilidadesArchivos\UtilidadesArchivos.csproj">
+      <Project>{6640bc20-388d-48bc-8867-c5f2578d8a29}</Project>
+      <Name>UtilidadesArchivos</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

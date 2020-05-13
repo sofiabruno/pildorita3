@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
+using System.Web;
 
 namespace UtilidadesArchivos
 {
@@ -19,7 +20,11 @@ namespace UtilidadesArchivos
 
             try
             {
-                string ruta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, carpeta, nombreArchivo);
+                //string ruta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, carpeta, nombreArchivo);
+
+                string ruta = Path.Combine(HttpRuntime.AppDomainAppPath, carpeta, nombreArchivo);
+
+                
 
                 using (StreamWriter sw = new StreamWriter(ruta, true))
                 {

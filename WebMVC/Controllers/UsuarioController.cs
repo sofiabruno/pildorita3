@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Dominio;
 using Repositorios;
 using WebMVC.ViewModels;
+using UtilidadesArchivos;
 
 namespace WebMVC.Controllers
 {
@@ -185,6 +186,19 @@ namespace WebMVC.Controllers
             return View(FachadaPortLog.TraerTodosLosUsuarios());
         }
 
+
+        public ActionResult GenerarTxt()
+        {
+            if (Session["rol"] == null)
+                return Redirect("/Home/Index");
+
+            ArchivoDelimitado.GuardarUsuariosArchivo("#", "ArchivosTexto", "DatosUsuarios.txt");
+            ArchivoDelimitado.GuardarClientesArchivo("#", "ArchivosTexto", "DatosClientes.txt");
+            ArchivoDelimitado.GuardarProductosArchivo("#", "ArchivosTexto", "DatosProductos.txt");
+            ArchivoDelimitado.GuardarImportacionesArchivo("#", "ArchivosTexto", "DatosImportaciones.txt");
+
+            return Redirect("/Home/Index");
+        }
 
 
 
