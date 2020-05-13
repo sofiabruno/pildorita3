@@ -159,6 +159,22 @@ namespace WebMVC.Controllers
 
             ViewBag.Ganancia = ganancia;
 
+            List<Importacion> lista = FachadaPortLog.TraerLasImpDeUnCliente(rut);
+
+            List<Importacion> listaQueGeneranGanancia = new List<Importacion>();
+            DateTime fchHoy = DateTime.Today;
+
+            ViewBag.lista = listaQueGeneranGanancia;
+
+            foreach (Importacion i in lista)
+            {
+                if (i.FechaIngreso <= fchHoy && i.SalidaPrevista >= fchHoy)
+                {
+                    listaQueGeneranGanancia.Add(i);
+                }
+            }
+                                          
+
             return View(cliente);
         }
 

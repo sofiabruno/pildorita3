@@ -1,4 +1,5 @@
 ﻿@model Dominio.Cliente
+@using Dominio
 
 @{
     ViewBag.Title = "Ganancia";
@@ -50,6 +51,54 @@
 <br />
 
 <h5>* Al dia de hoy @DateTime.Today.ToShortDateString()</h5>
+
+<br />
+<p>Importaciones que están afectando el calculo: </p>
+
+<table class="table table-hover">
+    <tr>
+        <th>
+            Fecha de Ingreso
+        </th>
+        <th>
+            Salida Prevista
+        </th>
+
+        <th>
+            Cantidad
+        </th>
+        <th>
+            Precio Unitario
+        </th>
+      
+
+    </tr>
+
+           @foreach (Importacion i in ViewBag.lista){
+            <tr>
+                <td>
+                    @i.FechaIngreso.ToShortDateString()
+                </td>
+                <td>
+                    @i.SalidaPrevista.ToShortDateString()
+                </td>
+
+                <td>
+                    @i.Cantidad
+                </td>
+                <td>
+                    @i.PrecioUnitario
+                </td>
+             
+
+
+            </tr>
+
+
+    }
+
+</table>
+
 
 
 <div>
