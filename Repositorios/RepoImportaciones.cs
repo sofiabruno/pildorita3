@@ -11,8 +11,8 @@ namespace Repositorios
 {
     public class RepoImportaciones : IRepositorio<Importacion>
     {
-        //string strCon = "Data Source=(local)\\SQLEXPRESS; Initial Catalog=BasePortLog; Integrated Security=SSPI;";
-        string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+        string strCon = "Data Source=(local)\\SQLEXPRESS; Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+        //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
 
 
 
@@ -20,37 +20,40 @@ namespace Repositorios
         {
             bool ret = false;
 
-            //verificar que el rut que se ingresa
-            //en el form corresponda con objerto.producto.cliente.rut
-
-            //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
-            SqlConnection con = new SqlConnection(strCon);
-
-            string sql = "insert into Importaciones(FechaIngreso, SalidaPrevista, ProductoID, Cantidad, PrecioUnitario) values(@fchIng, @salPrev, @ProdId, @cant, @precio);";
-            SqlCommand cmd = new SqlCommand(sql, con);
-
-            cmd.Parameters.AddWithValue("@fchIng", obj.FechaIngreso);
-            cmd.Parameters.AddWithValue("@salPrev", obj.SalidaPrevista);
-            cmd.Parameters.AddWithValue("@ProdId", obj.Producto.Id);
-            cmd.Parameters.AddWithValue("@cant", obj.Cantidad);
-            cmd.Parameters.AddWithValue("@precio", obj.PrecioUnitario);
-     
-
-            try
+            //control de fechas
+            if (obj.SalidaPrevista > obj.FechaIngreso)
             {
-                con.Open();
-                int afectadas = cmd.ExecuteNonQuery();
-                con.Close();
+                //string strCon = "Data Source=(local); Initial Catalog=BasePortLog; Integrated Security=SSPI;";
+                SqlConnection con = new SqlConnection(strCon);
 
-                ret = afectadas == 1;
-            }
-            catch
-            {
-                throw;
-            }
-            finally
-            {
-                if (con.State == ConnectionState.Open) con.Close();
+                string sql = "insert into Importaciones(FechaIngreso, SalidaPrevista, ProductoID, Cantidad, PrecioUnitario) values(@fchIng, @salPrev, @ProdId, @cant, @precio);";
+                SqlCommand cmd = new SqlCommand(sql, con);
+
+                cmd.Parameters.AddWithValue("@fchIng", obj.FechaIngreso);
+                cmd.Parameters.AddWithValue("@salPrev", obj.SalidaPrevista);
+                cmd.Parameters.AddWithValue("@ProdId", obj.Producto.Id);
+                cmd.Parameters.AddWithValue("@cant", obj.Cantidad);
+                cmd.Parameters.AddWithValue("@precio", obj.PrecioUnitario);
+
+
+                try
+                {
+                    con.Open();
+                    int afectadas = cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    ret = afectadas == 1;
+                }
+                catch
+                {
+                    throw;
+                }
+                finally
+                {
+                    if (con.State == ConnectionState.Open) con.Close();
+                }
+                
+               
             }
 
             return ret;
