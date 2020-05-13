@@ -228,10 +228,10 @@ namespace Repositorios
             foreach (Importacion i in impsCliente)
             {
                 //verifico que  ya haya entrado y que no se haya ido aun
-                //no las cuento en el calculo si ya salió de depostio o si aun no ingreso
-                if (i.FechaIngreso < fchHoy && i.SalidaPrevista > fchHoy)
+                //no las cuento en el calculo si ya salió de deposito o si aun no ingreso
+                if (i.FechaIngreso <= fchHoy && i.SalidaPrevista >= fchHoy)
                 {
-                    int dias = i.SalidaPrevista.DayOfYear - i.FechaIngreso.DayOfYear +1;
+                    int dias = i.SalidaPrevista.DayOfYear - i.FechaIngreso.DayOfYear;
                     monto += (i.Cantidad) * (i.PrecioUnitario) * (porcDiario) * dias;
 
                 }
