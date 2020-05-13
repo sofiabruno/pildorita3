@@ -197,7 +197,7 @@ namespace WebMVC.Controllers
             ArchivoDelimitado.GuardarProductosArchivo("#", "ArchivosTexto", "DatosProductos.txt");
             ArchivoDelimitado.GuardarImportacionesArchivo("#", "ArchivosTexto", "DatosImportaciones.txt");
 
-            return Redirect("/Home/Index");
+            return View();
         }
 
 

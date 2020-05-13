@@ -239,6 +239,7 @@
     <Content Include="Views\Importacion\List.cshtml" />
     <Content Include="Views\Importacion\Create.cshtml" />
     <Content Include="Views\Cliente\Ganancia.cshtml" />
+    <Content Include="Views\Usuario\GenerarTxt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
